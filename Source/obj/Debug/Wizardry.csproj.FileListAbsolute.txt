@@ -1,1 +1,3 @@
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\Lord of the Rims - Wizardry\Source\obj\Debug\Wizardry.csprojResolveAssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Lord of the Rims - Wizardry\Assemblies\LotR_Wizardry.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Lord of the Rims - Wizardry\Source\obj\Debug\LotR_Wizardry.dll

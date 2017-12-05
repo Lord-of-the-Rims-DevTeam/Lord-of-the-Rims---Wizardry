@@ -58,12 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PawnAbilityAttunement.cs" />
     <Compile Include="SpellDefAttunement.cs" />
     <Compile Include="CompWizardry.cs" />
     <Compile Include="UtilityWizardry.cs" />
-    <Compile Include="WerewolfFloatMenuPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WWDefOf.cs" />
+    <Compile Include="WizardryDefOf.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
