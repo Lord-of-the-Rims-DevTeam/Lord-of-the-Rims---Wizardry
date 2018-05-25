@@ -16,6 +16,6 @@ namespace Wizardry
 
     public class CompWizardry : CompAbilityUser
     {
-        public override bool TryTransformPawn() => this.Pawn.IsIstari() || this.Pawn.IsWizard(); 
+        public override bool TryTransformPawn() => this.Pawn.IsIstari() || this.Pawn.IsMage(); 
     }
 }

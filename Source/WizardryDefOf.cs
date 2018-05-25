@@ -10,8 +10,7 @@ namespace Wizardry
     [DefOf]
     public class WizardryDefOf
     {
-        public static TraitDef Istari;
-        public static TraitDef MagicAttuned;
+        public static TraitDef LotRW_Istari;
+        public static TraitDef LotRW_MagicAttuned;
     }
-
 }

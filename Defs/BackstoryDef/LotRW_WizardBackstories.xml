@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AlienRace.BackstoryDef Name="LotRW_BackstoryWizard" Abstract="True">
+    <spawnCategories>
+      <li>LotRW_BackstoryWizard</li>
+    </spawnCategories>
+</AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardChildOne</defName>
+    <title>None</title>
+    <baseDescription>An Istari, also known as a wizard, is a Maiar spirit sent to earth in a human form to aid the Free Peoples against the threat of corruptive dark forces. They have no unique childhoods, as they are avatars of these spirits.</baseDescription>
+	<slot>Childhood</slot>
+</AlienRace.BackstoryDef>
+
+<!-- Adult backstories -->
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardAdultOne</defName>
+    <title>Wandering Wizard</title>
+    <baseDescription>NAME wandered the world, seeking out ways to fulfill their Vala's requests through their adventures.</baseDescription>
+	<slot>Adulthood</slot>
+    <skillGains>      
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>12</amount>
+      </li>
+      <li>
+        <defName>Social</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+</AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardAdultTwo</defName>
+    <title>Tower Wizard</title>
+    <baseDescription>NAME fortified their position in the world by constructing a massive tower and tending to its servants. However, soaring to such great heights left HIM with an air of superiority that tended to upset HIS servants and guests.</baseDescription>
+	<slot>Adulthood</slot>
+    <skillGains>      
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>15</amount>
+      </li>
+      <li>
+        <defName>Construction</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>4</amount>
+      </li>
+    </skillGains>
+    <forcedTraits>
+	  <li>
+	    <defName>Industriousness</defName>
+		<degree>2</degree>
+		<chance>25</chance>
+	  </li>
+	  <li>
+	    <defName>Abrasive</defName>
+	  </li>
+    </forcedTraits>
+</AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardAdultThree</defName>
+    <title>Woodland Wizard</title>
+    <baseDescription>NAME mostly kept to themselves deep in the woods. Their reclusion in the woods lent to their expertise in wildlife flora and fauna.</baseDescription>
+	<slot>Adulthood</slot>
+    <skillGains>      
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>12</amount>
+      </li>
+      <li>
+        <defName>Animals</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Artistic</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Growing</defName>
+        <amount>4</amount>
+      </li>   
+    </skillGains>
+    <forcedTraits>
+	  <li>
+	    <defName>GreenThumb</defName>
+	  </li>	 
+	  <li>
+	    <defName>Ascetic</defName>
+	  </li>
+    </forcedTraits>
+</AlienRace.BackstoryDef>
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardAdultFour</defName>
+    <title>Alchemist Wizard</title>
+    <baseDescription>NAME sought nothing more than to attune the elements to their aid by crafting concoctions, doodads, and salves from the flora and fauna around them for various purposes.</baseDescription>
+	<slot>Adulthood</slot>
+    <skillGains>      
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>12</amount>
+      </li>
+      <li>
+        <defName>Medicine</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Cooking</defName>
+        <amount>4</amount>
+      </li>
+      <li>
+        <defName>Crafting</defName>
+        <amount>4</amount>
+      </li>   
+    </skillGains>
+</AlienRace.BackstoryDef>
+
+
+<AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
+    <defName>LotRW_BackstoryWizardAdultFour</defName>
+    <title>War Wizard</title>
+    <baseDescription>NAME was honed for battle over the centuries in service of HIS Valar.</baseDescription>
+	<slot>Adulthood</slot>
+    <skillGains>      
+	  <li>
+        <defName>Intellectual</defName>
+        <amount>10</amount>
+      </li>
+      <li>
+        <defName>Shooting</defName>
+        <amount>7</amount>
+      </li>
+      <li>
+        <defName>Melee</defName>
+        <amount>7</amount>
+      </li>
+    </skillGains>
+</AlienRace.BackstoryDef>
+
+</Defs>

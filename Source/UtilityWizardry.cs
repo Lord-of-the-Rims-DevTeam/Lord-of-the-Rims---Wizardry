@@ -11,14 +11,14 @@ namespace Wizardry
     {
         public static bool IsIstari(this Pawn pawn)
         {
-            if (pawn?.story?.traits?.HasTrait(TraitDef.Named("LOTR_Istari")) ?? false)
+            if (pawn?.story?.traits?.HasTrait(TraitDef.Named("LotRW_Istari")) ?? false)
                 return true;
             return false;
         }
 
-        public static bool IsWizard(this Pawn pawn)
+        public static bool IsMage(this Pawn pawn)
         {
-            if (pawn?.story?.traits?.HasTrait(TraitDef.Named("LOTR_MagicAttunement")) ?? false)
+            if (pawn?.story?.traits?.HasTrait(TraitDef.Named("LotRW_MagicAttuned")) ?? false)
                 return true;
             return false;
         }

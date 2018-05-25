@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>LotRW_Istari</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>Istari</label>
+        <description>NAME is a manifestation of a Maiar spirit sent to the world to help fight corrupting forces. They possess maximum magic potential and learn new spells quickly.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+	
+  <TraitDef>
+    <defName>LotRW_MagicAttuned</defName>
+    <commonality>0.05</commonality>
+    <degreeDatas>
+      <li>
+        <label>hedgemage</label>
+        <description>NAME is a hedgemage and takes much longer to learn magic spells than other magicly attuned individuals.</description>
+        <degree>-1</degree>
+      </li>
+      <li>
+        <label>mage</label>
+        <description>NAME is a rare individual that possesses blessed ability to attune magic. They are somewhat slow to learn spells, however, since they are difficult for non-Istari to master.</description>
+        <degree>0</degree>
+      </li>
+      <li>
+        <label>sorcerer</label>
+        <description>NAME is one of perhaps a handful of folk that is a powerful mage capable of learning spells quickly and wielding them with deadly precision.</description>
+        <degree>1</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

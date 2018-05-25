@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Lord-of-the-Rims---Wizardry\Assemblies" t="ExcludeRecursive" />
+    <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Lord-of-the-Rims---Wizardry\Source" t="IncludeRecursive">
+      <e p="CompWizardry.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PawnAbilityAttunement.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+      </e>
+      <e p="SpellDefAttunement.cs" t="Include" />
+      <e p="UtilityWizardry.cs" t="Include" />
+      <e p="Wizardry.csproj" t="IncludeRecursive" />
+      <e p="Wizardry.sln" t="IncludeFlat" />
+      <e p="WizardryDefOf.cs" t="Include" />
+    </e>
+    <e p="C:\Users\mattw\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Wizardry.-409681759.00" t="ExcludeRecursive" />
+  </component>
+</project>
