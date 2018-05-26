@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <PawnKindDef ParentName="LotRW_BasePlayerPawnKind">
+  <PawnKindDef ParentName="BasePlayerPawnKind">
     <defName>LotRW_WizardColonist</defName>
 	<race>LotRW_WizardStandardRace</race>
     <label>colonist (wizard)</label>
@@ -18,7 +18,7 @@
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
 
-  <AlienRace.ThingDef_AlienRace ParentName="LotRW_BasePawn">
+  <AlienRace.ThingDef_AlienRace ParentName="BasePawn">
     <defName>LotRW_WizardStandardRace</defName>
     <label>wizard</label>
     <description>Someone who is never late and means to arrive precisely when they mean to.</description>
@@ -287,45 +287,5 @@
     </recipes>
   </AlienRace.ThingDef_AlienRace>
   
-  <ThingDef Name="LotRW_BasePawn" Abstract="True">
-    <thingClass>Pawn</thingClass>
-    <category>Pawn</category>
-    <selectable>true</selectable>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Pawn</altitudeLayer>
-    <useHitPoints>false</useHitPoints>
-    <hasTooltip>true</hasTooltip>
-    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
-    <statBases>
-      <Mass>70</Mass>
-    </statBases>
-    <inspectorTabs>
-      <li>ITab_Pawn_Health</li>
-      <li>ITab_Pawn_Needs</li>
-      <li>ITab_Pawn_Character</li>
-      <li>ITab_Pawn_Training</li>
-      <li>ITab_Pawn_Gear</li>
-      <li>ITab_Pawn_Guest</li>
-      <li>ITab_Pawn_Prisoner</li>
-      <li>ITab_Pawn_Social</li>
-      <li>ITab_Pawn_Combat</li>
-    </inspectorTabs>
-    <comps>
-      <li>
-        <compClass>CompAttachBase</compClass>
-      </li>
-    </comps>
-    <drawGUIOverlay>true</drawGUIOverlay>
-  </ThingDef>
-
-  
-  <PawnKindDef Abstract="True" Name="LotRW_BasePlayerPawnKind">
-    <race>Human</race>
-    <combatPower>30</combatPower>
-    <baseRecruitDifficulty>0.60</baseRecruitDifficulty>
-    <isFighter>false</isFighter>
-    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
-    <forceNormalGearQuality>true</forceNormalGearQuality>
-  </PawnKindDef>
   
 </Defs>
