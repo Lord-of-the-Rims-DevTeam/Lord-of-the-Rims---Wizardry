@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Abstract="True" Name="BaseOnlyWizardryWeapon">
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<stackLimit>1</stackLimit>
+		<equipmentType>Primary</equipmentType>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>10</pathCost>
+		<selectable>true</selectable>
+		<tradeability>Never</tradeability>
+		<menuHidden>true</menuHidden>
+		<generateCommonality>0</generateCommonality>
+		<generateAllowChance>0</generateAllowChance>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>10.0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>2</Beauty>
+			<SellPriceFactor>0.20</SellPriceFactor>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+	</ThingDef>
+	
+  <ThingDef Name="BaseWizardryDisposableWeapon" Abstract="True" ParentName="BaseOnlyWizardryWeapon">
+	<techLevel>Neolithic</techLevel>
+	<smeltable>true</smeltable>
+	<thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef Name="WizardryBullet" Abstract="True">
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>Bullet</thingClass>
+    <label>bullet</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <!-- ============================================================== -->
+
+  <ThingDef ParentName="WizardryBullet">
+    <defName>Bullet_FlameSong_Small</defName>
+    <label>Small Orb of Flamesong</label>
+    <graphicData>
+      <texPath>Things/Items/flamesong</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Wizardry.Projectile_FlameSong</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <explosionRadius>3</explosionRadius>
+      <speed>24</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="WizardryBullet">
+    <defName>Bullet_FlameSong</defName>
+    <label>Orb of Flamesong</label>
+    <graphicData>
+      <texPath>Things/Items/flamesong</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Wizardry.Projectile_FlameSong</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <explosionRadius>4</explosionRadius>
+      <speed>20</speed>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWizardryDisposableWeapon">
+    <defName>LotRW_Flamesong_Orb_Small</defName>
+    <label>Small Orb of Flamesong</label>
+    <description>Unleashes the flames contained within this orb.</description>
+    <graphicData>
+      <texPath>Things/Items/flamesong</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>1</Mass>
+      <AccuracyTouch>1.0</AccuracyTouch>
+      <AccuracyShort>1.0</AccuracyShort>
+      <AccuracyMedium>1.0</AccuracyMedium>
+      <AccuracyLong>1.0</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+      <Weapon_Bulk>0.5</Weapon_Bulk>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <destroyOnDrop>false</destroyOnDrop>
+    <weaponTags>
+
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_FlameSong_Small</defaultProjectile>
+        <forcedMissRadius>0.0</forcedMissRadius>
+        <warmupTime>.4</warmupTime>
+        <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+        <range>28</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>AirWoosh</soundCast>
+        <soundCastTail>AirWoosh</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>1</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>orb</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseWizardryDisposableWeapon">
+    <defName>LotRW_Flamesong_Orb</defName>
+    <label>Orb of Flamesong</label>
+    <description>Unleashes the flames contained within this orb.</description>
+    <graphicData>
+      <texPath>Things/Items/flamesong</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0</MarketValue>
+      <Mass>1</Mass>
+      <AccuracyTouch>1.0</AccuracyTouch>
+      <AccuracyShort>1.0</AccuracyShort>
+      <AccuracyMedium>1.0</AccuracyMedium>
+      <AccuracyLong>1.0</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+      <Weapon_Bulk>0.5</Weapon_Bulk>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <destroyOnDrop>false</destroyOnDrop>
+    <weaponTags>
+
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_FlameSong</defaultProjectile>
+        <forcedMissRadius>0.0</forcedMissRadius>
+        <warmupTime>.5</warmupTime>
+        <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius>
+        <range>28</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>AirWoosh</soundCast>
+        <soundCastTail>AirWoosh</soundCastTail>
+        <onlyManualCast>true</onlyManualCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>1</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>orb</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2.3</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+</Defs>

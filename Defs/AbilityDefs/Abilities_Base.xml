@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<AbilityUser.AbilityDef Name="BaseWizardAbility" Abstract="True">
+		<abilityClass>Wizardry.PawnAbilityAttunement</abilityClass>
+		<uiIconPath>UI/Glow_Corrupt</uiIconPath>
+	</AbilityUser.AbilityDef>
+  
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+		<defName>LOTR_DefaultProjectile</defName>
+		<label>default wizard projectile</label>
+		<graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>999</speed>
+		</projectile>
+	</ThingDef>
+  
+</Defs>

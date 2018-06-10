@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<ThingDef ParentName="BaseBullet">
+	   <defName>Projectile_FocusFlames</defName>
+	   <thingClass>Wizardry.Varda_Projectile_FocusFlames</thingClass>
+	   <label>wizard projectile</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>4</damageAmountBase>
+			<speed>999</speed>
+			<explosionRadius>3</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+	   </projectile>
+	</ThingDef>
+	
+<!-- 	<ThingDef ParentName="WizardProjectile" Name="FanningFlames">
+	   <defName>WizardProjectile_FanningFlames</defName>
+	   <thingClass>Wizardry.WizardProjectile_FanningFlames</thingClass>
+	   <label>fanning flames</label>
+	</ThingDef> -->
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LOTR_Varda_FocusFlames</defName>
+    <label>fanning flames</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Gives purpose and direction to a flame.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_FocusFlames</defaultProjectile>
+      <abilityDef>LOTR_Varda_FocusFlames</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>50</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>ExpandingFlames</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>false</isPrimary>
+<!--       <AbilityTargetCategory>TargetLocation</AbilityTargetCategory> -->
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+		<canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+  
+  	<ThingDef ParentName="BaseBullet">
+	   <defName>Projectile_ConeOfFire</defName>
+	   <thingClass>Wizardry.Varda_Projectile_ConeOfFire</thingClass>
+	   <label>wizard projectile</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<speed>999</speed>
+	   </projectile>
+	</ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LOTR_Varda_ConeOfFire</defName>
+    <label>Cone of Fire</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Breaths a cone of burning fire.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_ConeOfFire</defaultProjectile>
+      <abilityDef>LOTR_Varda_ConeOfFire</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>30</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>ExpandingFlames</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>false</isPrimary>
+<!--       <AbilityTargetCategory>TargetLocation</AbilityTargetCategory> -->
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+		<canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+  <ThingDef ParentName="BaseBullet">
+	   <defName>Projectile_RainOfFire</defName>
+	   <thingClass>Wizardry.Varda_Projectile_RainOfFire</thingClass>
+	   <label>wizard projectile</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<speed>999</speed>
+			<explosionRadius>5</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+	   </projectile>
+	</ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LOTR_Varda_RainOfFire</defName>
+    <label>Rain of Fire</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Calls down a rain of fire from the skies.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_RainOfFire</defaultProjectile>
+      <abilityDef>LOTR_Varda_RainOfFire</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>.2</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>60</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>VibrationLow</soundCast>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>false</isPrimary>
+<!--       <AbilityTargetCategory>TargetLocation</AbilityTargetCategory> -->
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+		<canTargetLocations>true</canTargetLocations>
+      </targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+</Defs>

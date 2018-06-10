@@ -33,13 +33,14 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\Harmony1091\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="0JecsTools">
-      <HintPath>..\..\JecsTools\Assemblies\0JecsTools.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\932008009\Assemblies\0JecsTools.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\JecsTools\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -58,11 +59,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ulmo_FlyingObject_WolfSong.cs" />
+    <Compile Include="Ulmo_Effect_WolfSong.cs" />
+    <Compile Include="Ulmo_FlyingObject_RainDance.cs" />
+    <Compile Include="EffectMaker.cs" />
     <Compile Include="PawnAbilityAttunement.cs" />
     <Compile Include="SpellDefAttunement.cs" />
     <Compile Include="CompWizardry.cs" />
+    <Compile Include="Toils_Dance.cs" />
+    <Compile Include="Ulmo_JobDriver_RainDance.cs" />
+    <Compile Include="Ulmo_Effect_RainDance.cs" />
+    <Compile Include="Ulmo_Verb_FlameSong.cs" />
     <Compile Include="UtilityWizardry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Projectile_FlameSong.cs" />
+    <Compile Include="Varda_Projectile_ConeOfFire.cs" />
+    <Compile Include="Varda_Projectile_FocusFlames.cs" />
+    <Compile Include="Varda_Projectile_RainOfFire.cs" />
+    <Compile Include="WizardAbilityDef.cs" />
     <Compile Include="WizardryDefOf.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

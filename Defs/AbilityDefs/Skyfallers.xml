@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>Skyfaller_RainOfFire</defName>
+    <label>rain of fire</label>
+    <size>(2, 2)</size>
+    <graphicData>
+      <texPath>Projectiles/rainoffire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(2, 2)</shadowSize>
+      <explosionRadius>3.3</explosionRadius>
+      <explosionDamage>Flame</explosionDamage>
+	  <explosionDamageFactor>1</explosionDamageFactor>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>.6</speed>
+	  <movementType>Accelerate</movementType>
+	  <cameraShake>2</cameraShake>
+    </skyfaller>
+  </ThingDef>
+  
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>Skyfaller_RainOfFire_Small</defName>
+    <label>rain of fire</label>
+    <size>(1, 1)</size>
+    <graphicData>
+      <texPath>Projectiles/rainoffire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <shadowSize>(0, 0)</shadowSize>
+      <explosionRadius>1</explosionRadius>
+      <explosionDamage>Burn</explosionDamage>
+	  <explosionDamageFactor>1</explosionDamageFactor>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <speed>.9</speed>
+	  <movementType>Accelerate</movementType>
+	  <cameraShake>0</cameraShake>
+    </skyfaller>
+  </ThingDef>
+
+</Defs>

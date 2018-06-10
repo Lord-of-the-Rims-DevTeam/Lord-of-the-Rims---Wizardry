@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Rain Dance -->
+		
+	<ThingDef ParentName="BaseBullet" Name="FlyingObject_RainDance">
+	   <defName>FlyingObject_RainDance</defName>
+	   <thingClass>Wizardry.Ulmo_FlyingObject_RainDance</thingClass>
+	   <label>flying object</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>250</speed>
+	   </projectile>
+	</ThingDef>
+	
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LotRW_Ulmo_RainDance</defName>
+    <label>rain dance</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Does a dance that causes rain on the map.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>Wizardry.Ulmo_Effect_RainDance</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+      <abilityDef>LotRW_Ulmo_RainDance</abilityDef>
+      <isViolent>false</isViolent>
+      <warmupTime>.1</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>VibrationLow</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+	  <AlwaysHits>true</AlwaysHits>
+	  <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+			<canTargetItems>false</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>true</canTargetSelf>
+		</targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+  <!-- WolfSong -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+	    <defName>LotRW_Projectile_WolfSong</defName>
+        <label>wolf song projectile</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>30</damageAmountBase>
+            <speed>20</speed>
+			<explosionRadius>3</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet" Name="FlyingObject_WolfSong">
+	   <defName>FlyingObject_WolfSong</defName>
+	   <thingClass>Wizardry.Ulmo_FlyingObject_WolfSong</thingClass>
+	   <label>wolf song</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>30</damageAmountBase>
+			<speed>20</speed>
+			<explosionRadius>3</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+	   </projectile>
+	</ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Ulmo_WolfSong</defName>
+        <label>Wolf Song</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Calls forth the song of the arctic.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>Wizardry.Ulmo_Effect_WolfSong</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_Projectile_WolfSong</defaultProjectile>
+            <abilityDef>LotRW_Ulmo_WolfSong</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+	
+	  <!-- Flame Song -->
+  
+    <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>AbilityUser.Projectile_Ability</thingClass>
+	    <defName>LotRW_Projectile_FlameSong</defName>
+        <label>flame song projectile</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>4</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+	
+    <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Ulmo_FlameSong</defName>
+        <label>Flame Song</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Encapsulates fire into a hardened orb that can be used to unleash the contained flame at another time and place.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>Wizardry.Ulmo_Verb_FlameSong</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_Projectile_FlameSong</defaultProjectile>
+            <abilityDef>LotRW_Ulmo_FlameSong</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+  
+</Defs>

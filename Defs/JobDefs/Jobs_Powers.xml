@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============= Jobs for powers ===============-->
+
+  <JobDef>
+    <defName>Ulmo_JobDriver_RainDance</defName>
+    <driverClass>Wizardry.Ulmo_JobDriver_RainDance</driverClass>
+    <reportString>performing rain dance</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+</Defs>

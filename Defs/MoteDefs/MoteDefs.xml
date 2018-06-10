@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_ExpandingFlame</defName>
+    <graphicData>
+      <texPath>Effects/ExpandingFlame</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.12</solidTime>
+      <fadeOutTime>0.10</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_RecedingFlame</defName>
+    <graphicData>
+      <texPath>Effects/RecedingFlame</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.3</fadeInTime>
+      <solidTime>0.3</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Sparks</defName>
+    <graphicData>
+      <texPath>Effects/Sparks</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.3</fadeInTime>
+      <solidTime>0.3</solidTime>
+      <fadeOutTime>0.3</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WolfSong_North</defName>
+    <graphicData>
+      <texPath>Effects/WolfSong_back</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+ 
+   <ThingDef ParentName="MoteBase">
+    <defName>Mote_WolfSong_South</defName>
+    <graphicData>
+      <texPath>Effects/WolfSong_front</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WolfSong_East</defName>
+    <graphicData>
+      <texPath>Effects/WolfSong_right</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_WolfSong_West</defName>
+    <graphicData>
+      <texPath>Effects/WolfSong_left</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.05</fadeInTime>
+      <solidTime>0.5</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+</Defs>

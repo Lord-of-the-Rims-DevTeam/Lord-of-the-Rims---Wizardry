@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ModMetaData>
   <name>Lord of the Rims - Wizardry</name>
   <author>Jecrell</author>
@@ -6,5 +7,5 @@
   <description>
   V1.18.0.0
   Adds Wizardry from Lord of the Rings into RimWorld.
-</description>
+  </description>
 </ModMetaData>
