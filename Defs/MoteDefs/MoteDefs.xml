@@ -14,6 +14,45 @@
     </mote>
   </ThingDef>
   
+    <ThingDef ParentName="MoteBase">
+    <defName>Mote_CastingBeam</defName>
+    <graphicData>
+      <texPath>Effects/SpellBeam</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.12</solidTime>
+      <fadeOutTime>0.10</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Tornado</defName>
+    <graphicData>
+      <texPath>Things/Ethereal/Tornado</texPath>
+    </graphicData>
+    <altitudeLayer>Weather</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.12</solidTime>
+      <fadeOutTime>0.10</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Rubble</defName>
+    <graphicData>
+      <texPath>Effects/Rubble</texPath>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.05</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
   <ThingDef ParentName="MoteBase">
     <defName>Mote_RecedingFlame</defName>
     <graphicData>

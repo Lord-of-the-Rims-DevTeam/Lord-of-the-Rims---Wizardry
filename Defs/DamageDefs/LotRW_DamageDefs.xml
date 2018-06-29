@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- BASE -->
+
+  <DamageDef Name="LotRW_LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+  
+  
+  <!-- Damage Defs -->  	
+  
+  	<DamageDef ParentName="LotRW_LocalInjuryBase">
+		<defName>LotRW_RockFragments</defName>
+		<label>Rock Fragments</label>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} was smashed by flying rocks.</deathMessage>
+		<hediff>LotRW_RockFragments</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<explosionDamage>8</explosionDamage>
+		<armorCategory>Blunt</armorCategory>
+		<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+		<explosionCellMote>Mote_BlastFlame</explosionCellMote>
+		<explosionColorCenter>(1, 1, 1)</explosionColorCenter>
+		<explosionColorEdge>(1, 0.8, 0.6)</explosionColorEdge>
+		<soundExplosion>SoftExplosion</soundExplosion>
+	</DamageDef>
+
+</Defs>

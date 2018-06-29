@@ -59,6 +59,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Varda_FlyingObject_StreamingFlame.cs" />
+    <Compile Include="LotRW_Building_BlockingTraversable.cs" />
+    <Compile Include="ExplosionUtility.cs" />
+    <Compile Include="FlyingObject_Spinning.cs" />
+    <Compile Include="Manwe_Verb_AirWall.cs" />
+    <Compile Include="Manwe_Projectile_AirWall.cs" />
+    <Compile Include="Projectile_LightChaser.cs" />
+    <Compile Include="JobDriver_StormCalling.cs" />
+    <Compile Include="Manwe_Effect_WindControl.cs" />
+    <Compile Include="Manwe_FlyingObject_WindControl.cs" />
     <Compile Include="Ulmo_FlyingObject_WolfSong.cs" />
     <Compile Include="Ulmo_Effect_WolfSong.cs" />
     <Compile Include="Ulmo_FlyingObject_RainDance.cs" />
@@ -66,9 +76,9 @@
     <Compile Include="PawnAbilityAttunement.cs" />
     <Compile Include="SpellDefAttunement.cs" />
     <Compile Include="CompWizardry.cs" />
-    <Compile Include="Toils_Dance.cs" />
-    <Compile Include="Ulmo_JobDriver_RainDance.cs" />
     <Compile Include="Ulmo_Effect_RainDance.cs" />
+    <Compile Include="Manwe_Projectile_Vortex.cs" />
+    <Compile Include="Verb_StormCalling.cs" />
     <Compile Include="Ulmo_Verb_FlameSong.cs" />
     <Compile Include="UtilityWizardry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

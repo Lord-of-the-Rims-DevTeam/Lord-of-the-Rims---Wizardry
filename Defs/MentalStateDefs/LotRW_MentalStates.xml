@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalStateDef Abstract="True" Name="LotRW_BaseMentalState">
+    <minTicksBeforeRecovery>600</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.1</recoveryMtbDays>
+  </MentalStateDef>
+
+  <!-- Mental breaks: -->
+  <MentalStateDef ParentName="LotRW_BaseMentalState">
+    <defName>LotRW_FleeLight</defName>
+    <label>fleeing from light</label>
+    <stateClass>MentalState_PanicFlee</stateClass>
+    <category>Panic</category>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+	<minTicksBeforeRecovery>120</minTicksBeforeRecovery>
+	<recoveryMtbDays>0.005</recoveryMtbDays>
+	<maxTicksBeforeRecovery>180</maxTicksBeforeRecovery>
+    <recoveryMessage>{0} is no longer fleeing from light.</recoveryMessage>
+    <baseInspectLine>Mental state: Fleeing from light</baseInspectLine>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <unspawnedCanDo>false</unspawnedCanDo>
+  </MentalStateDef>
+
+
+</Defs>

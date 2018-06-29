@@ -22,7 +22,6 @@ namespace Wizardry
             this.fireAmount = CalculateFireAmountInArea(centerCell, this.Projectile.projectile.explosionRadius, map);
             if ((centerCell.IsValid && centerCell.InBounds(map)))
             {
-                Log.Message("fire amount was " + this.fireAmount);
                 Thing thing = null;
                 if (this.fireAmount > 8f)
                 {

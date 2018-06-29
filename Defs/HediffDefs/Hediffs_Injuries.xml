@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef Name="LotRW_InjuryBase" Abstract="True">
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+  </HediffDef>
+  
+  <HediffDef ParentName="LotRW_InjuryBase">
+    <defName>LotRW_RockFragments</defName>
+    <label>Rock fragments</label>
+    <displayWound>true</displayWound>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsOld">
+        <oldLabel>crushed</oldLabel>
+      </li>
+    </comps>
+	<injuryProps>
+		<painPerSeverity>0.0125</painPerSeverity>
+		<averagePainPerSeverityOld>0.00625</averagePainPerSeverityOld>
+		<bleedRate>0.00625</bleedRate>
+		<canMerge>true</canMerge>
+			<destroyedLabel>crushed</destroyedLabel>
+			<destroyedOutLabel>crushed</destroyedOutLabel>
+	</injuryProps>
+  </HediffDef>	
+
+</Defs>

@@ -2,11 +2,11 @@
 <Defs>
 
   <!--============= Jobs for powers ===============-->
-
-  <JobDef>
-    <defName>Ulmo_JobDriver_RainDance</defName>
-    <driverClass>Wizardry.Ulmo_JobDriver_RainDance</driverClass>
-    <reportString>performing rain dance</reportString>
+  
+    <JobDef>
+    <defName>JobDriver_StormCalling</defName>
+    <driverClass>Wizardry.JobDriver_StormCalling</driverClass>
+    <reportString>directing the elements</reportString>
     <casualInterruptible>false</casualInterruptible>
   </JobDef>
   

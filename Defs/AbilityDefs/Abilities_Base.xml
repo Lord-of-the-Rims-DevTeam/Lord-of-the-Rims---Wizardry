@@ -23,5 +23,55 @@
 			<speed>999</speed>
 		</projectile>
 	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet" Name="FlyingObject_Spinning">
+	   <defName>FlyingObject_Spinning</defName>
+	   <thingClass>Wizardry.FlyingObject_Spinning</thingClass>
+	   <label>flying object</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>25</speed>
+	   </projectile>
+	</ThingDef>
+	
+    <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>CompVerb</defName>
+        <label>secondary targeter</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>verb used in secondary targetting</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+            <abilityDef>CompVerb</abilityDef>
+			<isViolent>false</isViolent>
+            <warmupTime>0</warmupTime>
+            <SecondsToRecharge>0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
   
 </Defs>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--========================= Base ===============================-->
+
+  <ThingDef Name="LotRW_BuildingBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>BuildingRubble</filthLeaving>
+		<statBases>
+			<SellPriceFactor>0.00</SellPriceFactor>
+		</statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="LotRW_BuildingBase" Name="LotRW_BlockSightTraversable" Abstract="True">
+    <thingClass>Wizardry.LotRW_Building_BlockingTraversable</thingClass>
+<!-- 	<thingClass>Building_Door</thingClass> -->
+    <blueprintClass>Blueprint_Door</blueprintClass>
+    <category>Building</category>
+    <blueprintGraphicData>
+      <texPath>Projectiles/invis</texPath>
+    </blueprintGraphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>.65</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <selectable>false</selectable>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>
+	
+	</designationCategory>
+    <holdsRoof>false</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <drawerType>RealtimeOnly</drawerType>
+    <building>
+	  <isInert>true</isInert>
+	  <canPlaceOverWall>false</canPlaceOverWall>
+      <soundDoorOpenPowered>AirWoosh</soundDoorOpenPowered>
+      <soundDoorClosePowered>AirWoosh</soundDoorClosePowered>
+      <soundDoorOpenManual>AirWoosh</soundDoorOpenManual>
+      <soundDoorCloseManual>AirWoosh</soundDoorCloseManual>
+    </building>
+  </ThingDef>
+  
+<!--========================= Air Wall =============================-->
+
+  <ThingDef ParentName="LotRW_BlockSightTraversable" Name="LotRW_WindWall">
+    <defName>LotRW_WindWall</defName>
+    <label>wind wall</label>
+    <category>Building</category>
+    <description>An wall made from solidified air and dust. Provides blocks vision and repels movement.</description>
+    <graphicData>
+	  <texPath>Projectiles/invis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <damageData>
+		<enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Projectiles/invis</uiIconPath>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>20</pathCost>
+    <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>.65</fillPercent>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>false</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <holdsRoof>false</holdsRoof>
+    <designationCategory>
+	
+	</designationCategory>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <isInert>true</isInert>
+	  <expandHomeArea>false</expandHomeArea>
+      <isTrap>false</isTrap>
+	  <deconstructible>false</deconstructible>
+	  <claimable>false</claimable>
+	  <repairable>false</repairable>
+	  <isPlayerEjectable>false</isPlayerEjectable>
+    </building>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(60,0,120,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>1200</lifespanTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  </Defs>

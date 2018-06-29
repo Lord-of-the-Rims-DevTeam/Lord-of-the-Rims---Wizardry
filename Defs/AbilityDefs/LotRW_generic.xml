@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Storm Calling -->
+	
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LotRW_StormCalling</defName>
+    <label>Command Storm</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Performs a persistent job that summons lightning near enemies on the map. Weather conditions must be met to use this ability.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>Wizardry.Verb_StormCalling</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+      <abilityDef>LotRW_StormCalling</abilityDef>
+      <isViolent>true</isViolent>
+      <warmupTime>.1</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>0</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>VibrationLow</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+	  <AlwaysHits>true</AlwaysHits>
+	  <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
+		<targetParams>
+			<canTargetItems>false</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>true</canTargetSelf>
+		</targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+  <!-- Light Chaser -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>Wizardry.Projectile_LightChaser</thingClass>
+	    <defName>Projectile_LightChaser</defName>
+        <label>wolf song projectile</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>3</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_LightChaser</defName>
+        <label>Light Chaser</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Commands the light to chase away the shadow.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Projectile_LightChaser</defaultProjectile>
+            <abilityDef>LotRW_LightChaser</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+</Defs>

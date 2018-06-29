@@ -163,4 +163,20 @@
     </MainVerb>
   </Wizardry.WizardAbilityDef>
   
+  	<ThingDef ParentName="BaseBullet" Name="FlyingObject_StreamingFlame">
+	   <defName>FlyingObject_StreamingFlame</defName>
+	   <thingClass>Wizardry.Varda_FlyingObject_StreamingFlame</thingClass>
+	   <label>flying object</label>
+	   <graphicData>
+			<texPath>Effects/ExpandingFlame</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>22</speed>
+	   </projectile>
+	</ThingDef>
+  
 </Defs>

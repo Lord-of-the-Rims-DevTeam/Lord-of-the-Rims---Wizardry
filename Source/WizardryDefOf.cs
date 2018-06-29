@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using AbilityUser;
 
 namespace Wizardry
 {
@@ -19,6 +20,13 @@ namespace Wizardry
         public static WizardAbilityDef LotRW_Ulmo_WolfSong;
         public static WizardAbilityDef LotRW_Ulmo_FlameSong;
 
+        public static WizardAbilityDef LotRW_LightChaser;
+        public static WizardAbilityDef LotRW_StormCalling;
+
+        public static WizardAbilityDef LotRW_Manwe_WindControl;
+        public static WizardAbilityDef LotRW_Manwe_Vortex;
+        public static WizardAbilityDef LotRW_Manwe_AirWall;
+
         //Effects
         public static ThingDef Mote_ExpandingFlame;
         public static ThingDef Mote_RecedingFlame;
@@ -28,11 +36,26 @@ namespace Wizardry
         public static ThingDef Mote_WolfSong_East;
         public static ThingDef Mote_WolfSong_West;
         public static ThingDef FlyingObject_WolfSong;
+        public static ThingDef FlyingObject_Spinning;
+        public static ThingDef FlyingObject_StreamingFlame;
+        public static ThingDef Mote_CastingBeam;
 
+        //Sounds
+        public static SoundDef SoftExplosion;
+
+        //Traits
         public static TraitDef LotRW_Istari;
         public static TraitDef LotRW_MagicAttuned;
 
         //Ability Jobs
-        public static JobDef Ulmo_JobDriver_RainDance;
+        public static JobDef JobDriver_StormCalling;
+
+        //Mental States
+        public static MentalStateDef LotRW_FleeLight;
+
+        public static WizardAbilityDef CompVerb;
+
+        //Damages
+        public static DamageDef LotRW_RockFragments;
     }
 }

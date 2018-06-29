@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Wind Control -->
+		
+	<ThingDef ParentName="BaseBullet" Name="FlyingObject_WindControl">
+	   <defName>FlyingObject_WindControl</defName>
+	   <thingClass>Wizardry.Manwe_FlyingObject_WindControl</thingClass>
+	   <label>flying object</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>25</speed>
+	   </projectile>
+	</ThingDef>
+	
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+    <defName>LotRW_Manwe_WindControl</defName>
+    <label>Wind Control</label>
+    <uiIconPath>UI/defaultUI</uiIconPath>
+    <description>Uses authority of the air to lift or launch another pawn.</description>
+    <MainVerb Class="AbilityUser.VerbProperties_Ability">
+      <verbClass>Wizardry.Manwe_Effect_WindControl</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+      <abilityDef>LotRW_Manwe_WindControl</abilityDef>
+      <isViolent>false</isViolent>
+      <warmupTime>.1</warmupTime>
+      <SecondsToRecharge>5.0</SecondsToRecharge>
+      <range>40</range>
+      <burstShotCount>1</burstShotCount>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <soundCast>AirWoosh</soundCast>
+      <muzzleFlashScale>0</muzzleFlashScale>
+      <isPrimary>true</isPrimary>
+	  <AlwaysHits>true</AlwaysHits>
+		<targetParams>
+			<canTargetItems>true</canTargetItems>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>true</canTargetSelf>
+		</targetParams>
+      <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+      <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+      <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+      <tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+    </MainVerb>
+  </Wizardry.WizardAbilityDef>
+  
+  <!-- Vortex -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>Wizardry.Manwe_Projectile_Vortex</thingClass>
+	    <defName>LotRW_Projectile_Vortex</defName>
+        <label>vortex</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>4</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>5</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Manwe_Vortex</defName>
+        <label>Vortex</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Creates a massive vortex that flings objects around.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_Projectile_Vortex</defaultProjectile>
+            <abilityDef>LotRW_Manwe_Vortex</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+	<!-- Air Wall -->
+  
+  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>Wizardry.Manwe_Projectile_AirWall</thingClass>
+	    <defName>LotRW_Projectile_AirWall</defName>
+        <label>air wall</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+        </projectile>
+    </ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Manwe_AirWall</defName>
+        <label>Air Wall</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Creates a wall of air that blocks vision. Movement through the wall is possible but difficult.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_Projectile_AirWall</defaultProjectile>
+            <abilityDef>LotRW_Manwe_AirWall</abilityDef>
+			<isViolent>false</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>40</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+</Defs>

@@ -17,12 +17,13 @@ namespace Wizardry
     public class CompWizardry : CompAbilityUser
     {
         private bool doOnce = true;
+        public LocalTargetInfo SecondTarget = null;
         public override bool TryTransformPawn() => this.Pawn.IsIstari() || this.Pawn.IsMage();
 
         public override void CompTick()
         {
             base.CompTick();
-            if (Find.TickManager.TicksGame % 30 == 0)
+            if (Find.TickManager.TicksGame % 30 == 0 && this.doOnce)
             {
                 TempResolvePowers();
             }
@@ -38,6 +39,11 @@ namespace Wizardry
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_RainDance);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_WolfSong);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_FlameSong);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_StormCalling);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_LightChaser);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_WindControl);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_Vortex);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_AirWall);
 
                 this.AddPawnAbility(WizardryDefOf.LOTR_Varda_FocusFlames);
                 this.AddPawnAbility(WizardryDefOf.LOTR_Varda_ConeOfFire);
@@ -45,6 +51,11 @@ namespace Wizardry
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_RainDance);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_WolfSong);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_FlameSong);
+                this.AddPawnAbility(WizardryDefOf.LotRW_LightChaser);
+                this.AddPawnAbility(WizardryDefOf.LotRW_StormCalling);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_WindControl);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_Vortex);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_AirWall);
                 this.doOnce = false;
             }
         }
