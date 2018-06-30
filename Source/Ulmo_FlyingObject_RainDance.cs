@@ -114,7 +114,7 @@ namespace Wizardry
             if (pawn != null)
             {
                 MoteMaker.MakeStaticMote(pawn.TrueCenter(), pawn.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
-                SoundDefOf.AmbientAltitudeWind.sustainFadeoutTime.Equals(30.0f);
+                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 MoteMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
             }
             IEnumerable<IntVec3> innerCircle = GenRadial.RadialCellsAround(this.Position, Mathf.RoundToInt((this.destination - this.trueOrigin).MagnitudeHorizontal()+1), true);
@@ -369,7 +369,7 @@ namespace Wizardry
             {
                 hitThing.TakeDamage(this.impactDamage.Value);
             }
-            SoundDefOf.AmbientAltitudeWind.sustainFadeoutTime.Equals(30.0f);
+            SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
             GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
             Pawn p = this.flyingThing as Pawn;
             if (p.IsColonist)

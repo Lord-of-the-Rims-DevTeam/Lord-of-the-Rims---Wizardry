@@ -100,7 +100,7 @@ namespace Wizardry
                 MoteMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
             }
 
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, (int)Mathf.Min(5f, StatDefOf.Mass.defaultBaseValue), -1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(DamageDefOf.Blunt, (int)Mathf.Min(5f, StatDefOf.Mass.defaultBaseValue), 0, -1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             this.impactDamage = dinfo;
         }
 
@@ -381,7 +381,7 @@ namespace Wizardry
             }
             try
             {
-                SoundDefOf.AmbientAltitudeWind.sustainFadeoutTime.Equals(30.0f);
+                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
 
                 GenSpawn.Spawn(this.flyingThing, base.Position, base.Map);
                 if (this.flyingThing is Pawn)
@@ -432,7 +432,7 @@ namespace Wizardry
                         {
                             Vector3 moteDirection = GetVector(this.ExactPosition.ToIntVec3(), intVec);
                             EffectMaker.MakeEffect(ThingDef.Named("Mote_Rubble"), this.ExactPosition, base.Map, Rand.Range(.3f, .5f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 12f, 0);
-                            GenExplosion.DoExplosion(intVec, base.Map, .4f, WizardryDefOf.LotRW_RockFragments, pawn, Rand.Range(6, 16), SoundDefOf.BulletImpactFlesh, null, null, ThingDef.Named("RockRubble"), .6f, 1, false, null, 0f, 1, 0, false);
+                            GenExplosion.DoExplosion(intVec, base.Map, .4f, WizardryDefOf.LotRW_RockFragments, pawn, Rand.Range(6, 16), 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding, null, null, null, ThingDef.Named("Filth_RockRubble"), .6f, 1, false, null, 0f, 1, 0, false);
                             MoteMaker.ThrowSmoke(intVec.ToVector3Shifted(), base.Map, Rand.Range(.6f, 1f));
                         }
                     }
@@ -456,7 +456,7 @@ namespace Wizardry
         public void damageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
-            DamageInfo dinfo = new DamageInfo(type, amt, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

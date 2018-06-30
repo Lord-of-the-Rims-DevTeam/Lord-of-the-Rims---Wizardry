@@ -226,13 +226,13 @@ namespace Wizardry
 
         public void RemoveFireAtPosition(IntVec3 pos)
         {
-            GenExplosion.DoExplosion(pos, this.Map, 1, DamageDefOf.Extinguish, this.launcher, 100, SoundDef.Named("ExpandingFlames"), def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            GenExplosion.DoExplosion(pos, this.Map, 1, DamageDefOf.Extinguish, this.launcher, 100, 0, SoundDef.Named("ExpandingFlames"), def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
         }
 
         public void damageEntities(Thing e)
         {            
-            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.damageAmountBase * .5f, this.def.projectile.damageAmountBase * 1.5f) + this.fireAmount);
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, amt, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.DamageAmount * .5f, this.def.projectile.DamageAmount * 1.5f) + this.fireAmount);
+            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

@@ -99,7 +99,7 @@ namespace Wizardry
             if (pawn != null)
             {
                 MoteMaker.MakeStaticMote(pawn.TrueCenter(), pawn.Map, ThingDefOf.Mote_ExplosionFlash, 12f);
-                SoundDefOf.AmbientAltitudeWind.sustainFadeoutTime.Equals(30.0f);
+                SoundDefOf.Ambient_AltitudeWind.sustainFadeoutTime.Equals(30.0f);
                 MoteMaker.ThrowDustPuff(pawn.Position, pawn.Map, Rand.Range(1.2f, 1.8f));
                 GetVector();
                 this.angle = (Quaternion.AngleAxis(90, Vector3.up) * this.direction).ToAngleFlat();
@@ -273,9 +273,9 @@ namespace Wizardry
 
         public void damageEntities(Thing e)
         {
-            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.damageAmountBase * .75f, this.def.projectile.damageAmountBase * 1.25f));
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Stun, amt, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
-            DamageInfo dinfo2 = new DamageInfo(DamageDefOf.Frostbite, Mathf.RoundToInt(amt * .1f), (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.DamageAmount * .75f, this.def.projectile.DamageAmount * 1.25f));
+            DamageInfo dinfo = new DamageInfo(DamageDefOf.Stun, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo2 = new DamageInfo(DamageDefOf.Frostbite, Mathf.RoundToInt(amt * .1f), 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

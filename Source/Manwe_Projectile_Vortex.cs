@@ -139,7 +139,7 @@ namespace Wizardry
                                     {
                                         if (this.fireVortexValue > 0)
                                         {
-                                            damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.damageAmountBase * force), DamageDefOf.Flame);
+                                            damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.DamageAmount * force), DamageDefOf.Flame);
                                             this.fireVortexValue -= .2f;
                                         }
                                         LaunchFlyingObect(projectedPosition, victim);
@@ -149,7 +149,7 @@ namespace Wizardry
                                 {
                                     if (this.fireVortexValue > 0)
                                     {
-                                        damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.damageAmountBase * force * 2), DamageDefOf.Flame);
+                                        damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.DamageAmount * force * 2), DamageDefOf.Flame);
                                         this.fireVortexValue -= .2f;
                                     }
                                 }
@@ -235,7 +235,7 @@ namespace Wizardry
 
         public void RemoveFireAtPosition(IntVec3 pos)
         {
-            GenExplosion.DoExplosion(pos, this.Map, 1, DamageDefOf.Extinguish, this.launcher, 100, SoundDef.Named("ExpandingFlames"), def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            GenExplosion.DoExplosion(pos, this.Map, 1, DamageDefOf.Extinguish, this.launcher, 100, 0, SoundDef.Named("ExpandingFlames"), def, this.equipmentDef, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
         }
 
         private float AdjustedDistanceFromCenter(float distanceFromCenter)
@@ -270,7 +270,7 @@ namespace Wizardry
         public void damageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
-            DamageInfo dinfo = new DamageInfo(type, amt, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

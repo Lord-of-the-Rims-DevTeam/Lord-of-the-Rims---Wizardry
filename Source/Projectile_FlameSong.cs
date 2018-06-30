@@ -82,8 +82,8 @@ namespace Wizardry
 
         public void damageEntities(Thing e)
         {            
-            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.damageAmountBase * .75f, this.def.projectile.damageAmountBase * 1.25f) + this.fireAmount);
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, amt, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.DamageAmount * .75f, this.def.projectile.DamageAmount * 1.25f) + this.fireAmount);
+            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

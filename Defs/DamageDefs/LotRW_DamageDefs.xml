@@ -18,7 +18,7 @@
 		<deathMessage>{0} was smashed by flying rocks.</deathMessage>
 		<hediff>LotRW_RockFragments</hediff>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
-		<explosionDamage>8</explosionDamage>
+		<defaultDamage>8</defaultDamage>
 		<armorCategory>Blunt</armorCategory>
 		<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
 		<explosionCellMote>Mote_BlastFlame</explosionCellMote>

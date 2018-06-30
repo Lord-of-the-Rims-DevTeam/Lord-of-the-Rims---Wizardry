@@ -246,7 +246,7 @@ namespace Wizardry
         public void damageEntities(Thing e, float amt)
         {
             amt = Rand.Range(amt * .75f, amt * 1.25f);
-            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, Mathf.RoundToInt(amt), (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
+            DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, Mathf.RoundToInt(amt), 2, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)
             {

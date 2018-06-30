@@ -23,7 +23,7 @@ namespace Wizardry
                         List<Apparel> wornApparel = this.CasterPawn.apparel.WornApparel;
                         for (int i = 0; i < wornApparel.Count; i++)
                         {
-                            if (!wornApparel[i].AllowVerbCast(root, this.caster.Map, targ))
+                            if (!wornApparel[i].AllowVerbCast(root, this.caster.Map, targ, this))
                             {
                                 return false;
                             }

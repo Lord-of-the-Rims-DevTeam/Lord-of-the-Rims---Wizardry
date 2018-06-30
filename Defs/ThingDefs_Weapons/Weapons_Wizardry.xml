@@ -13,7 +13,7 @@
 		<useHitPoints>true</useHitPoints>
 		<pathCost>10</pathCost>
 		<selectable>true</selectable>
-		<tradeability>Never</tradeability>
+		<tradeability>None</tradeability>
 		<menuHidden>true</menuHidden>
 		<generateCommonality>0</generateCommonality>
 		<generateAllowChance>0</generateAllowChance>
@@ -72,6 +72,7 @@
       <damageAmountBase>20</damageAmountBase>
       <explosionRadius>3</explosionRadius>
       <speed>24</speed>
+	  <ai_IsIncendiary>true</ai_IsIncendiary>
     </projectile>
   </ThingDef>
   
@@ -89,6 +90,7 @@
       <damageAmountBase>24</damageAmountBase>
       <explosionRadius>4</explosionRadius>
       <speed>20</speed>
+	  <ai_IsIncendiary>true</ai_IsIncendiary>
     </projectile>
   </ThingDef>
   

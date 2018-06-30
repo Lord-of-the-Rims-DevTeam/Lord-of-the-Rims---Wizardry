@@ -34,7 +34,7 @@ namespace Wizardry
                 explosion.postExplosionSpawnThingCount = postExplosionSpawnThingCount;
                 explosion.applyDamageToExplosionCellsNeighbors = applyDamageToExplosionCellsNeighbors;
                 explosion.chanceToStartFire = chanceToStartFire;
-                explosion.dealMoreDamageAtCenter = dealMoreDamageAtCenter;
+                explosion.damageFalloff = dealMoreDamageAtCenter;
                 return explosion;
                 //explosion.StartExplosion(explosionSound);
             }

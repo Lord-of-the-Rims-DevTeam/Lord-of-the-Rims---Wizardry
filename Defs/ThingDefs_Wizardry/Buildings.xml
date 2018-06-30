@@ -12,7 +12,7 @@
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-    <filthLeaving>BuildingRubble</filthLeaving>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
 		<statBases>
 			<SellPriceFactor>0.00</SellPriceFactor>
 		</statBases>
@@ -21,11 +21,7 @@
   <ThingDef ParentName="LotRW_BuildingBase" Name="LotRW_BlockSightTraversable" Abstract="True">
     <thingClass>Wizardry.LotRW_Building_BlockingTraversable</thingClass>
 <!-- 	<thingClass>Building_Door</thingClass> -->
-    <blueprintClass>Blueprint_Door</blueprintClass>
     <category>Building</category>
-    <blueprintGraphicData>
-      <texPath>Projectiles/invis</texPath>
-    </blueprintGraphicData>
     <altitudeLayer>Building</altitudeLayer>
     <fillPercent>.65</fillPercent>
     <useHitPoints>true</useHitPoints>
@@ -42,7 +38,7 @@
     <selectable>false</selectable>
     <tickerType>Normal</tickerType>
     <rotatable>false</rotatable>
-    <soundImpactDefault>BulletImpactFlesh</soundImpactDefault>
+    <soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>
 	

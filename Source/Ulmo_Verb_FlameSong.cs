@@ -73,7 +73,7 @@ namespace Wizardry
 
         public void RemoveFireAtPosition(IntVec3 pos, Map map)
         {
-            GenExplosion.DoExplosion(pos, map, 1, DamageDefOf.Extinguish, this.CasterPawn, 100, SoundDef.Named("ExpandingFlames"), null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            GenExplosion.DoExplosion(pos, map, 1, DamageDefOf.Extinguish, this.CasterPawn, 100, 0, SoundDef.Named("ExpandingFlames"), null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
         }
     }
 }
