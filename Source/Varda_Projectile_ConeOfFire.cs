@@ -84,7 +84,7 @@ namespace Wizardry
                         for (int j = 0; j < hitList.Count; j++)
                         {
                             burnThing = hitList[j];
-                            damageEntities(burnThing);
+                            DamageEntities(burnThing);
                         }
                         //GenExplosion.DoExplosion(this.currentPos.ToIntVec3(), this.Map, .4f, DamageDefOf.Flame, this.launcher, 10, SoundDefOf.ArtilleryShellLoaded, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1, 0f, false);
                         if (Rand.Chance(this.fireStartChance))
@@ -110,7 +110,7 @@ namespace Wizardry
                                 for (int j = 0; j < hitList.Count; j++)
                                 {
                                     burnThing = hitList[j];
-                                    damageEntities(burnThing);
+                                    DamageEntities(burnThing);
                                 }
                                 if (Rand.Chance(this.fireStartChance))
                                 {
@@ -129,7 +129,7 @@ namespace Wizardry
                                 for (int j = 0; j < hitList.Count; j++)
                                 {
                                     burnThing = hitList[j];
-                                    damageEntities(burnThing);
+                                    DamageEntities(burnThing);
                                 }
                                 if (Rand.Chance(this.fireStartChance))
                                 {
@@ -166,9 +166,9 @@ namespace Wizardry
             return dirVec;
         }
 
-        public void damageEntities(Thing e)
+        public void DamageEntities(Thing e)
         {            
-            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.DamageAmount * .75f, this.def.projectile.DamageAmount * 1.25f) + this.fireAmount);
+            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) * .75f, this.def.projectile.GetDamageAmount(1, null) * 1.25f) + this.fireAmount);
             DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;
             if (flag)

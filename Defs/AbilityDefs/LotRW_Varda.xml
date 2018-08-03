@@ -27,7 +27,7 @@
 	</ThingDef> -->
 
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-    <defName>LOTR_Varda_FocusFlames</defName>
+    <defName>LotRW_Varda_FocusFlames</defName>
     <label>fanning flames</label>
     <uiIconPath>UI/defaultUI</uiIconPath>
     <description>Gives purpose and direction to a flame.</description>
@@ -35,7 +35,7 @@
       <verbClass>AbilityUser.Verb_UseAbility</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
       <defaultProjectile>Projectile_FocusFlames</defaultProjectile>
-      <abilityDef>LOTR_Varda_FocusFlames</abilityDef>
+      <abilityDef>LotRW_Varda_FocusFlames</abilityDef>
       <isViolent>true</isViolent>
       <warmupTime>.2</warmupTime>
       <SecondsToRecharge>5.0</SecondsToRecharge>
@@ -78,7 +78,7 @@
 	</ThingDef>
 
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-    <defName>LOTR_Varda_ConeOfFire</defName>
+    <defName>LotRW_Varda_ConeOfFire</defName>
     <label>Cone of Fire</label>
     <uiIconPath>UI/defaultUI</uiIconPath>
     <description>Breaths a cone of burning fire.</description>
@@ -86,7 +86,7 @@
       <verbClass>AbilityUser.Verb_UseAbility</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
       <defaultProjectile>Projectile_ConeOfFire</defaultProjectile>
-      <abilityDef>LOTR_Varda_ConeOfFire</abilityDef>
+      <abilityDef>LotRW_Varda_ConeOfFire</abilityDef>
       <isViolent>true</isViolent>
       <warmupTime>.2</warmupTime>
       <SecondsToRecharge>5.0</SecondsToRecharge>
@@ -130,7 +130,7 @@
 	</ThingDef>
 
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-    <defName>LOTR_Varda_RainOfFire</defName>
+    <defName>LotRW_Varda_RainOfFire</defName>
     <label>Rain of Fire</label>
     <uiIconPath>UI/defaultUI</uiIconPath>
     <description>Calls down a rain of fire from the skies.</description>
@@ -138,7 +138,7 @@
       <verbClass>AbilityUser.Verb_UseAbility</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
       <defaultProjectile>Projectile_RainOfFire</defaultProjectile>
-      <abilityDef>LOTR_Varda_RainOfFire</abilityDef>
+      <abilityDef>LotRW_Varda_RainOfFire</abilityDef>
       <isViolent>true</isViolent>
       <warmupTime>.2</warmupTime>
       <SecondsToRecharge>5.0</SecondsToRecharge>

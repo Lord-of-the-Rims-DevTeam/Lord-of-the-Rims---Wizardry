@@ -28,7 +28,7 @@
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
       <verbClass>Wizardry.Ulmo_Effect_RainDance</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+      <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
       <abilityDef>LotRW_Ulmo_RainDance</abilityDef>
       <isViolent>false</isViolent>
       <warmupTime>.1</warmupTime>

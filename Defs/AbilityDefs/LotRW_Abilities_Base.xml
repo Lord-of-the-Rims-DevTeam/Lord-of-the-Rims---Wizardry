@@ -9,7 +9,7 @@
   
 	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
 		<thingClass>AbilityUser.Projectile_Ability</thingClass>
-		<defName>LOTR_DefaultProjectile</defName>
+		<defName>LotRW_DefaultProjectile</defName>
 		<label>default wizard projectile</label>
 		<graphicData>
 			<texPath>Projectiles/invis</texPath>
@@ -52,7 +52,7 @@
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
 				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
             <hasStandardCommand>true</hasStandardCommand>
-            <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+            <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
             <abilityDef>CompVerb</abilityDef>
 			<isViolent>false</isViolent>
             <warmupTime>0</warmupTime>

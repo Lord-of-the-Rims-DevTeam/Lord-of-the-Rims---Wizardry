@@ -54,8 +54,10 @@ namespace Wizardry
             bool flag = t.Cell != default(IntVec3);
             if (flag)
             {
-                Thing launchedThing = new Thing();
-                launchedThing.def = WizardryDefOf.FlyingObject_WolfSong;
+                Thing launchedThing = new Thing()
+                {
+                    def = WizardryDefOf.FlyingObject_WolfSong
+                };
                 //Pawn casterPawn = base.CasterPawn;
                 LongEventHandler.QueueLongEvent(delegate
                 {

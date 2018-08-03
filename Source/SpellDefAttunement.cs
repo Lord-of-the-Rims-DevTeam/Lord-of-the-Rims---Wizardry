@@ -7,8 +7,6 @@ namespace Wizardry
 {
     public class SpellDefAttunement : AbilityUser.AbilityDef
     {
-
-
         public List<string> tags = new List<string>();
     }
 }

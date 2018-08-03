@@ -7,6 +7,8 @@
     <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
     <label>Blindness</label>
     <lethalSeverity>20</lethalSeverity>
+	<isBad>true</isBad>
+	<makesSickThought>false</makesSickThought>
 	<comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-50</severityPerDay>
@@ -72,6 +74,55 @@
 		  <AimingDelayFactor>+0.40</AimingDelayFactor>
 	    </statOffsets>
       </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>LotRW_Quake</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1, 1, 1)</defaultLabelColor>
+    <label>Earthquake</label>
+	<isBad>true</isBad>
+	<makesSickThought>false</makesSickThought>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-100</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>I</label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>false</becomeVisible>
+        <capMods>
+		  <li>
+            <capacity>Moving</capacity>
+            <setMax>0.5</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>II</label>
+        <minSeverity>1</minSeverity>	
+		<becomeVisible>false</becomeVisible>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.2</setMax>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+        <label>III</label>
+        <minSeverity>3</minSeverity>	
+        <becomeVisible>false</becomeVisible>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.05</setMax>
+          </li>
+        </capMods>
+      </li>	  
     </stages>
   </HediffDef>  
   

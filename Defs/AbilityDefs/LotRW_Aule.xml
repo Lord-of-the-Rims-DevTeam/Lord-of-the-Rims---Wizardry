@@ -2,35 +2,49 @@
 
 <Defs>
 
-	<!-- Storm Calling -->
-	
+	<ThingDef ParentName="BaseBullet">
+	   <defName>LotRW_Projectile_RendEarth</defName>
+	   <thingClass>Wizardry.Aule_Projectile_RendEarth</thingClass>
+	   <label>wizard projectile</label>
+	   <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>999</speed>
+	   </projectile>
+	</ThingDef>
+
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-    <defName>LotRW_StormCalling</defName>
-    <label>Command Storm</label>
+    <defName>LotRW_Aule_RendEarth</defName>
+    <label>Rend Earth</label>
     <uiIconPath>UI/defaultUI</uiIconPath>
-    <description>Performs a persistent job that summons lightning near enemies on the map. Weather conditions must be met to use this ability.</description>
+    <description>Rends the earth, causing massive buildings along its path and destroys walls.</description>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
-      <verbClass>Wizardry.Verb_StormCalling</verbClass>
+      <verbClass>Wizardry.Verb_BLOS</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
-      <abilityDef>LotRW_StormCalling</abilityDef>
+      <defaultProjectile>LotRW_Projectile_RendEarth</defaultProjectile>
+      <abilityDef>LotRW_Aule_RendEarth</abilityDef>
       <isViolent>true</isViolent>
-      <warmupTime>.1</warmupTime>
+      <warmupTime>.2</warmupTime>
       <SecondsToRecharge>5.0</SecondsToRecharge>
-      <range>0</range>
+      <range>50</range>
       <burstShotCount>1</burstShotCount>
       <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
       <soundCast>VibrationLow</soundCast>
-      <muzzleFlashScale>0</muzzleFlashScale>
-      <isPrimary>true</isPrimary>
-	  <AlwaysHits>true</AlwaysHits>
-	  <AbilityTargetCategory>TargetSelf</AbilityTargetCategory>
-		<targetParams>
-			<canTargetItems>false</canTargetItems>
-			<canTargetPawns>true</canTargetPawns>
-			<canTargetLocations>false</canTargetLocations>
-			<canTargetSelf>true</canTargetSelf>
-		</targetParams>
+      <muzzleFlashScale>20</muzzleFlashScale>
+      <isPrimary>false</isPrimary>
+<!--       <AbilityTargetCategory>TargetLocation</AbilityTargetCategory> -->
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>false</canTargetItems>
+        <canTargetSelf>false</canTargetSelf>
+		<canTargetLocations>true</canTargetLocations>
+      </targetParams>
       <tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
       <tooltipShowExtraDamages>false</tooltipShowExtraDamages>
       <tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
@@ -38,12 +52,12 @@
     </MainVerb>
   </Wizardry.WizardAbilityDef>
   
-  <!-- Light Chaser -->
+  <!-- Rock Wall -->
   
   <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>Wizardry.Projectile_LightChaser</thingClass>
-	    <defName>Projectile_LightChaser</defName>
-        <label>wolf song projectile</label>
+		<thingClass>Wizardry.Aule_Projectile_RockWall</thingClass>
+	    <defName>LotRW_Projectile_RockWall</defName>
+        <label>rock wall</label>
         <graphicData>
 			<texPath>Projectiles/invis</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -52,16 +66,14 @@
             <damageDef>Stun</damageDef>
             <damageAmountBase>0</damageAmountBase>
             <speed>999</speed>
-			<explosionRadius>3</explosionRadius>
-			<postExplosionSpawnChance>1</postExplosionSpawnChance>
         </projectile>
     </ThingDef>
 
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-        <defName>LotRW_LightChaser</defName>
-        <label>Light Chaser</label>
+        <defName>LotRW_Aule_RockWall</defName>
+        <label>Earth Barrier</label>
         <uiIconPath>UI/defaultUI</uiIconPath>
-        <description>Commands the light to chase away the shadow.</description>
+        <description>Creates a wall of earth</description>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
             <verbClass>AbilityUser.Verb_UseAbility</verbClass>
 				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
@@ -69,9 +81,9 @@
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
 				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
             <hasStandardCommand>true</hasStandardCommand>
-            <defaultProjectile>Projectile_LightChaser</defaultProjectile>
-            <abilityDef>LotRW_LightChaser</abilityDef>
-			<isViolent>true</isViolent>
+            <defaultProjectile>LotRW_Projectile_RockWall</defaultProjectile>
+            <abilityDef>LotRW_Aule_RockWall</abilityDef>
+			<isViolent>false</isViolent>
             <warmupTime>.1</warmupTime>
             <SecondsToRecharge>5.0</SecondsToRecharge>
             <range>40</range>
@@ -83,12 +95,12 @@
 		    <AlwaysHits>true</AlwaysHits>
             <isPrimary>true</isPrimary>
 			<targetParams>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
                 <canTargetSelf>false</canTargetSelf>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
         </MainVerb>
     </Wizardry.WizardAbilityDef>
-	
+  
 </Defs>

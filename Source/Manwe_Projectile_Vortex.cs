@@ -139,7 +139,7 @@ namespace Wizardry
                                     {
                                         if (this.fireVortexValue > 0)
                                         {
-                                            damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.DamageAmount * force), DamageDefOf.Flame);
+                                            DamageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * force), DamageDefOf.Flame);
                                             this.fireVortexValue -= .2f;
                                         }
                                         LaunchFlyingObect(projectedPosition, victim);
@@ -149,7 +149,7 @@ namespace Wizardry
                                 {
                                     if (this.fireVortexValue > 0)
                                     {
-                                        damageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.DamageAmount * force * 2), DamageDefOf.Flame);
+                                        DamageEntities(dmgThing, Mathf.RoundToInt(this.def.projectile.GetDamageAmount(1, null) * force * 2), DamageDefOf.Flame);
                                         this.fireVortexValue -= .2f;
                                     }
                                 }
@@ -187,8 +187,10 @@ namespace Wizardry
             IEnumerable<IntVec3> targetsCells = GenRadial.RadialCellsAround(this.realPosition.ToIntVec3(), 4, true).Except(targetsCellsSmall);
             IntVec3 startCell = targetsCells.RandomElement();
             Vector3 moteVector = GetVector(this.realPosition.ToIntVec3(), startCell);
-            Thing launchedThing = new Thing();
-            launchedThing.def = WizardryDefOf.FlyingObject_StreamingFlame;
+            Thing launchedThing = new Thing()
+            {
+                def = WizardryDefOf.FlyingObject_StreamingFlame
+            };
             LaunchFlames(targetsCellsSmall.RandomElement(), startCell + (moteVector * 4).ToIntVec3(), launchedThing);
             this.fireVortexValue -= .4f;
         }
@@ -267,7 +269,7 @@ namespace Wizardry
             return direction;
         }
 
-        public void damageEntities(Thing e, float d, DamageDef type)
+        public void DamageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
             DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

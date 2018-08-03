@@ -29,13 +29,21 @@ namespace Wizardry
             }
         }
 
+        public bool IsWizard
+        {
+            get
+            {
+                return UtilityWizardry.IsIstari(this.Pawn) || UtilityWizardry.IsMage(this.Pawn);
+            }
+        }
+
         private void TempResolvePowers()
         {
             if (this.Pawn.IsIstari() && doOnce)
             {
-                this.RemovePawnAbility(WizardryDefOf.LOTR_Varda_FocusFlames);
-                this.RemovePawnAbility(WizardryDefOf.LOTR_Varda_ConeOfFire);
-                this.RemovePawnAbility(WizardryDefOf.LOTR_Varda_RainOfFire);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Varda_FocusFlames);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Varda_ConeOfFire);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Varda_RainOfFire);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_RainDance);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_WolfSong);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Ulmo_FlameSong);
@@ -44,10 +52,14 @@ namespace Wizardry
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_WindControl);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_Vortex);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Manwe_AirWall);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Nienna_HealingRain);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Nienna_HealingTouch);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Aule_RockWall);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Aule_RendEarth);
 
-                this.AddPawnAbility(WizardryDefOf.LOTR_Varda_FocusFlames);
-                this.AddPawnAbility(WizardryDefOf.LOTR_Varda_ConeOfFire);
-                this.AddPawnAbility(WizardryDefOf.LOTR_Varda_RainOfFire);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Varda_FocusFlames);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Varda_ConeOfFire);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Varda_RainOfFire);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_RainDance);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_WolfSong);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Ulmo_FlameSong);
@@ -56,6 +68,10 @@ namespace Wizardry
                 this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_WindControl);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_Vortex);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Manwe_AirWall);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Nienna_HealingRain);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Nienna_HealingTouch);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Aule_RockWall);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Aule_RendEarth);
                 this.doOnce = false;
             }
         }

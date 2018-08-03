@@ -31,16 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\Harmony1091\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="0JecsTools">
-      <HintPath>..\..\..\..\..\workshop\content\294100\932008009\Assemblies\0JecsTools.dll</HintPath>
+    <Reference Include="0Harmony, Version=1.0.9.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\JecsTools-master\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AbilityUser">
-      <HintPath>..\..\..\..\..\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
+      <HintPath>..\..\JecsTools-master\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -59,6 +56,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Nienna_WorkGiver_HealingTouch.cs" />
+    <Compile Include="Verb_BLOS.cs" />
+    <Compile Include="MeshMaker.cs" />
+    <Compile Include="MatPool.cs" />
+    <Compile Include="Effect_MeshMaker.cs" />
+    <Compile Include="Harmony_LotRW.cs" />
+    <Compile Include="Aule_Projectile_RockWall.cs" />
+    <Compile Include="Nienna_JobDriver_HealingTouch.cs" />
+    <Compile Include="Nienna_Verb_HealingRain.cs" />
+    <Compile Include="Nienna_Verb_HealingTouch.cs" />
     <Compile Include="Varda_FlyingObject_StreamingFlame.cs" />
     <Compile Include="LotRW_Building_BlockingTraversable.cs" />
     <Compile Include="ExplosionUtility.cs" />
@@ -78,6 +85,7 @@
     <Compile Include="CompWizardry.cs" />
     <Compile Include="Ulmo_Effect_RainDance.cs" />
     <Compile Include="Manwe_Projectile_Vortex.cs" />
+    <Compile Include="Aule_Projectile_RendEarth.cs" />
     <Compile Include="Verb_StormCalling.cs" />
     <Compile Include="Ulmo_Verb_FlameSong.cs" />
     <Compile Include="UtilityWizardry.cs" />

@@ -28,7 +28,6 @@ namespace Wizardry
         public float speed = 25f;
         private int rotation = 0;
         private float impactForce = 0;
-        private bool earlyImpact = false;
 
         public override void ExposeData()
         {
@@ -151,7 +150,6 @@ namespace Wizardry
             }
             else if (!this.ExactPosition.ToIntVec3().Walkable(base.Map))
             {
-                this.earlyImpact = true;
                 this.impactForce = (this.DestinationCell - this.ExactPosition.ToIntVec3()).LengthHorizontal + (this.speed * .2f);
                 this.ImpactSomething();
             }
@@ -306,7 +304,7 @@ namespace Wizardry
                             for (int j = 0; j < hitList.Count; j++)
                             {
                                 burnThing = hitList[j];
-                                damageEntities(burnThing, Rand.Range(6, 16), DamageDefOf.Flame);
+                                DamageEntities(burnThing, Rand.Range(6, 16), DamageDefOf.Flame);
                             }
                             //GenExplosion.DoExplosion(this.currentPos.ToIntVec3(), this.Map, .4f, DamageDefOf.Flame, this.launcher, 10, SoundDefOf.ArtilleryShellLoaded, def, this.equipmentDef, null, 0f, 1, false, null, 0f, 1, 0f, false);
                             if (Rand.Chance(.5f))
@@ -322,8 +320,8 @@ namespace Wizardry
                 //Pawn p = this.flyingThing as Pawn;
                 //if (this.earlyImpact)
                 //{
-                //    damageEntities(p, this.impactForce, DamageDefOf.Blunt);
-                //    damageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
+                //    DamageEntities(p, this.impactForce, DamageDefOf.Blunt);
+                //    DamageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
                 //}
                 this.Destroy(DestroyMode.Vanish);
             }
@@ -350,12 +348,12 @@ namespace Wizardry
                     {
                         if (hitList[j] is Pawn)
                         {
-                            damageEntities(hitList[j], Rand.Range(5, 9), DamageDefOf.Flame);
+                            DamageEntities(hitList[j], Rand.Range(5, 9), DamageDefOf.Flame);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
                         else if (hitList[j] is Building)
                         {
-                            damageEntities(hitList[j], Rand.Range(10, 22), DamageDefOf.Flame);
+                            DamageEntities(hitList[j], Rand.Range(10, 22), DamageDefOf.Flame);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
 
@@ -372,7 +370,7 @@ namespace Wizardry
             return direction;
         }
 
-        public void damageEntities(Thing e, float d, DamageDef type)
+        public void DamageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
             DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

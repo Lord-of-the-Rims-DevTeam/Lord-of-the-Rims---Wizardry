@@ -264,16 +264,16 @@ namespace Wizardry
                     {
                         if(hitList[j] is Pawn && hitList[j] != pawn)
                         {
-                            damageEntities(hitList[j]);
+                            DamageEntities(hitList[j]);
                         }                        
                     }
                 }
             }
         }
 
-        public void damageEntities(Thing e)
+        public void DamageEntities(Thing e)
         {
-            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.DamageAmount * .75f, this.def.projectile.DamageAmount * 1.25f));
+            int amt = Mathf.RoundToInt(Rand.Range(this.def.projectile.GetDamageAmount(1, null) * .75f, this.def.projectile.GetDamageAmount(1, null) * 1.25f));
             DamageInfo dinfo = new DamageInfo(DamageDefOf.Stun, amt, 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             DamageInfo dinfo2 = new DamageInfo(DamageDefOf.Frostbite, Mathf.RoundToInt(amt * .1f), 0, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
             bool flag = e != null;

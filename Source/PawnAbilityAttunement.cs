@@ -60,7 +60,7 @@ namespace Wizardry
             else
             {
                 WizardAbilityDef wizardAbilityDef;
-                bool flag2 = (wizardAbilityDef = (((verbDef != null) ? verbDef.abilityDef : null) as WizardAbilityDef)) != null;
+                bool flag2 = (wizardAbilityDef = ((verbDef?.abilityDef) as WizardAbilityDef)) != null;
                 if (flag2)
                 {
                     StringBuilder stringBuilder = new StringBuilder();

@@ -19,7 +19,7 @@ namespace Wizardry
         int duration = 1200;
         List<Pawn> targetList = new List<Pawn>();
 
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
@@ -83,7 +83,7 @@ namespace Wizardry
             }, false, 0f);
             commandStorm.AddFinishAction(delegate
             {
-                Log.Message("ending storm calling");
+                //Log.Message("ending storm calling");
                 //do soemthing?
             });
             yield return commandStorm;

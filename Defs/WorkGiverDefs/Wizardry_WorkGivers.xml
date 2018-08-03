@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>Nienna_HealingTouch</defName>
+    <label>uses wizardly powers to rapidly heal another</label>
+    <giverClass>Wizardry.Nienna_WorkGiver_HealingTouch</giverClass>
+    <workType>Doctor</workType>
+    <emergency>true</emergency>
+    <verb>healing</verb>
+    <gerund>healing touch on</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <priorityInType>115</priorityInType>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>

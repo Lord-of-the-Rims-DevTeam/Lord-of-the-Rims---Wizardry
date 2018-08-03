@@ -28,7 +28,7 @@
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
       <verbClass>Wizardry.Manwe_Effect_WindControl</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>LOTR_DefaultProjectile</defaultProjectile>
+      <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
       <abilityDef>LotRW_Manwe_WindControl</abilityDef>
       <isViolent>false</isViolent>
       <warmupTime>.1</warmupTime>

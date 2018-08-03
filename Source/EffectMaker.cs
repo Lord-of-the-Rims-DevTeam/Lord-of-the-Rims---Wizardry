@@ -44,5 +44,41 @@ namespace Wizardry
             }
             GenSpawn.Spawn(moteThrown, loc.ToIntVec3(), map);
         }
+
+        public static void MakeRadialEffects(float radius, ThingDef mote, Vector3 loc, Map map, float scale, float directionAngle, float velocity, float rotationRate, float lookAngle, float solidTime, float fadeIn, float fadeOut, bool colorShift)
+        {
+            int num = GenRadial.NumCellsInRadius(radius);
+            for (int i = 0; i < num; i++)
+            {
+                IntVec3 intVec = loc.ToIntVec3() + GenRadial.RadialPattern[i];
+                if (intVec.IsValid && intVec.InBounds(map))
+                {
+                    //-1 denotes "outward" from center
+                    if (directionAngle == -1)
+                    {
+                        directionAngle = (Quaternion.AngleAxis(90, Vector3.up) * GetVector(loc.ToIntVec3(), intVec)).ToAngleFlat();
+                    }
+                    if (lookAngle == -1)
+                    {
+                        lookAngle = (Quaternion.AngleAxis(90, Vector3.up) * GetVector(loc.ToIntVec3(), intVec)).ToAngleFlat();
+                    }
+                    EffectMaker.MakeEffect(mote, intVec.ToVector3Shifted(), map, scale, directionAngle, velocity, rotationRate, lookAngle, solidTime, fadeIn, fadeOut, false);
+                }
+            }
+        }
+
+        public static void MakeRadialEffects(float radius, ThingDef mote, Vector3 loc, Map map, float scale, float directionAngle, float velocity, float rotationRate, float lookAngle)
+        {
+            MoteThrown moteThrown = (MoteThrown)ThingMaker.MakeThing(mote, null);
+            MakeRadialEffects(radius, mote, loc, map, scale, directionAngle, velocity, rotationRate, lookAngle, moteThrown.def.mote.solidTime, moteThrown.def.mote.fadeInTime, moteThrown.def.mote.fadeOutTime, false);
+        }
+
+        private static Vector3 GetVector(IntVec3 center, IntVec3 objectPos)
+        {
+            Vector3 heading = (objectPos - center).ToVector3();
+            float distance = heading.magnitude;
+            Vector3 direction = heading / distance;
+            return direction;
+        }
     }
 }

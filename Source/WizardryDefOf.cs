@@ -12,9 +12,9 @@ namespace Wizardry
     public class WizardryDefOf
     {
         //AbilityDefs
-        public static WizardAbilityDef LOTR_Varda_FocusFlames;
-        public static WizardAbilityDef LOTR_Varda_ConeOfFire;
-        public static WizardAbilityDef LOTR_Varda_RainOfFire;
+        public static WizardAbilityDef LotRW_Varda_FocusFlames;
+        public static WizardAbilityDef LotRW_Varda_ConeOfFire;
+        public static WizardAbilityDef LotRW_Varda_RainOfFire;
 
         public static WizardAbilityDef LotRW_Ulmo_RainDance;
         public static WizardAbilityDef LotRW_Ulmo_WolfSong;
@@ -26,6 +26,12 @@ namespace Wizardry
         public static WizardAbilityDef LotRW_Manwe_WindControl;
         public static WizardAbilityDef LotRW_Manwe_Vortex;
         public static WizardAbilityDef LotRW_Manwe_AirWall;
+
+        public static WizardAbilityDef LotRW_Nienna_HealingRain;
+        public static WizardAbilityDef LotRW_Nienna_HealingTouch;
+
+        public static WizardAbilityDef LotRW_Aule_RendEarth;
+        public static WizardAbilityDef LotRW_Aule_RockWall;
 
         //Effects
         public static ThingDef Mote_ExpandingFlame;
@@ -49,6 +55,7 @@ namespace Wizardry
 
         //Ability Jobs
         public static JobDef JobDriver_StormCalling;
+        public static JobDef JobDriver_HealingTouch;
 
         //Mental States
         public static MentalStateDef LotRW_FleeLight;
@@ -57,5 +64,8 @@ namespace Wizardry
 
         //Damages
         public static DamageDef LotRW_RockFragments;
+
+        //Weather
+        public static WeatherDef LotRW_HealingRainWD;
     }
 }

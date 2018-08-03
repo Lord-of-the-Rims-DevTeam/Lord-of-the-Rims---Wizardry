@@ -2,25 +2,25 @@
 
 <Defs>
 
-	<!-- Storm Calling -->
+	<!-- Healing Rain -->
 	
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-    <defName>LotRW_StormCalling</defName>
-    <label>Command Storm</label>
+    <defName>LotRW_Nienna_HealingRain</defName>
+    <label>Healing Rain</label>
     <uiIconPath>UI/defaultUI</uiIconPath>
-    <description>Performs a persistent job that summons lightning near enemies on the map. Weather conditions must be met to use this ability.</description>
+    <description>Injects healing properties into existing rainy weather. Creatures exposed to he rain will slowly recover their injuries.</description>
     <MainVerb Class="AbilityUser.VerbProperties_Ability">
-      <verbClass>Wizardry.Verb_StormCalling</verbClass>
+      <verbClass>Wizardry.Nienna_Verb_HealingRain</verbClass>
       <hasStandardCommand>true</hasStandardCommand>
       <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
-      <abilityDef>LotRW_StormCalling</abilityDef>
-      <isViolent>true</isViolent>
+      <abilityDef>LotRW_Nienna_HealingRain</abilityDef>
+      <isViolent>false</isViolent>
       <warmupTime>.1</warmupTime>
       <SecondsToRecharge>5.0</SecondsToRecharge>
       <range>0</range>
       <burstShotCount>1</burstShotCount>
       <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-      <soundCast>VibrationLow</soundCast>
+      <soundCast>AirWoosh</soundCast>
       <muzzleFlashScale>0</muzzleFlashScale>
       <isPrimary>true</isPrimary>
 	  <AlwaysHits>true</AlwaysHits>
@@ -38,42 +38,25 @@
     </MainVerb>
   </Wizardry.WizardAbilityDef>
   
-  <!-- Light Chaser -->
-  
-  <ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
-		<thingClass>Wizardry.Projectile_LightChaser</thingClass>
-	    <defName>Projectile_LightChaser</defName>
-        <label>wolf song projectile</label>
-        <graphicData>
-			<texPath>Projectiles/invis</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <projectile>
-            <damageDef>Stun</damageDef>
-            <damageAmountBase>0</damageAmountBase>
-            <speed>999</speed>
-			<explosionRadius>3</explosionRadius>
-			<postExplosionSpawnChance>1</postExplosionSpawnChance>
-        </projectile>
-    </ThingDef>
+  <!-- Healing Touch -->
 
   <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
-        <defName>LotRW_LightChaser</defName>
-        <label>Light Chaser</label>
+        <defName>LotRW_Nienna_HealingTouch</defName>
+        <label>Healing Touch</label>
         <uiIconPath>UI/defaultUI</uiIconPath>
-        <description>Commands the light to chase away the shadow.</description>
+        <description>Restore the health of a target pawn.</description>
 		<MainVerb Class="AbilityUser.VerbProperties_Ability">
-            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+            <verbClass>Wizardry.Nienna_Verb_HealingTouch</verbClass>
 				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
 				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
 				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
 				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
             <hasStandardCommand>true</hasStandardCommand>
-            <defaultProjectile>Projectile_LightChaser</defaultProjectile>
-            <abilityDef>LotRW_LightChaser</abilityDef>
-			<isViolent>true</isViolent>
+            <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
+            <abilityDef>LotRW_Nienna_HealingTouch</abilityDef>
+			<isViolent>false</isViolent>
             <warmupTime>.1</warmupTime>
-            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <SecondsToRecharge>60.0</SecondsToRecharge>
             <range>40</range>
 			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
             <burstShotCount>1</burstShotCount>
@@ -84,11 +67,11 @@
             <isPrimary>true</isPrimary>
 			<targetParams>
                 <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetBuildings>false</canTargetBuildings>
                 <canTargetSelf>false</canTargetSelf>
-                <canTargetLocations>true</canTargetLocations>
+                <canTargetLocations>false</canTargetLocations>
             </targetParams>
         </MainVerb>
     </Wizardry.WizardAbilityDef>
-	
+
 </Defs>

@@ -288,8 +288,8 @@ namespace Wizardry
                 Pawn p = this.flyingThing as Pawn;
                 if (this.earlyImpact)
                 {
-                    damageEntities(p, this.impactForce, DamageDefOf.Blunt);
-                    damageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
+                    DamageEntities(p, this.impactForce, DamageDefOf.Blunt);
+                    DamageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
                 }
                 this.Destroy(DestroyMode.Vanish);
             }
@@ -317,12 +317,12 @@ namespace Wizardry
                     {
                         if (hitList[j] is Pawn)
                         {
-                            damageEntities(hitList[j], Rand.Range(6, 9), DamageDefOf.Crush);
+                            DamageEntities(hitList[j], Rand.Range(6, 9), DamageDefOf.Crush);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
                         else if (hitList[j] is Building)
                         {
-                            damageEntities(hitList[j], Rand.Range(9, 16), DamageDefOf.Crush);
+                            DamageEntities(hitList[j], Rand.Range(9, 16), DamageDefOf.Crush);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
 
@@ -339,7 +339,7 @@ namespace Wizardry
             return direction;
         }
 
-        public void damageEntities(Thing e, float d, DamageDef type)
+        public void DamageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
             DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

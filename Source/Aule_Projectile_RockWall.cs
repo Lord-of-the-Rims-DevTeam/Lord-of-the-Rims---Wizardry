@@ -12,14 +12,14 @@ using Harmony;
 namespace Wizardry
 {
     [StaticConstructorOnStartup]
-    public class Manwe_Projectile_AirWall : Projectile_AbilityBase
+    public class Aule_Projectile_RockWall : Projectile_AbilityBase
     {
         private bool initialized = false;
         private bool wallActive = false;
-        private int wallLength = 0;
+        private int wallLength = 0;        
+        private Vector3 wallPos = default(Vector3);
         private int age = -1;
         private int duration = 300;
-        Vector3 wallPos = default(Vector3);
         Vector3 wallDir = default(Vector3);
         IntVec3 wallEnd = default(IntVec3);
         List<IntVec3> wallPositions = new List<IntVec3>();
@@ -28,6 +28,8 @@ namespace Wizardry
 
         //unsaved variables
         private int wallLengthMax = 20;
+        private float wallSpawnChance = .9f;
+        ThingDef spawnDef = ThingDef.Named("Sandstone");
 
         public override void ExposeData()
         {
@@ -76,6 +78,28 @@ namespace Wizardry
             {
                 caster = this.launcher as Pawn;
                 GetSecondTarget();
+                //todo: determine thingdef based on ground type, not random
+                float rnd = Rand.Range(0f, 3f);
+                if (rnd < 1)
+                {
+                    spawnDef = ThingDef.Named("Sandstone");
+                }
+                else if (rnd < 2)
+                {
+                    spawnDef = ThingDef.Named("Granite");
+                }
+                else if (rnd < 3)
+                {
+                    spawnDef = ThingDef.Named("Slate");  
+                }
+                else if (rnd < 4)
+                {
+                    spawnDef = ThingDef.Named("Limestone");
+                }
+                else
+                {
+                    spawnDef = ThingDef.Named("Marble");
+                }
                 this.initialized = true;
             }
 
@@ -83,7 +107,7 @@ namespace Wizardry
             if(!this.wallActive && comp.SecondTarget != null)
             {
                 this.age = 0;
-                this.duration = 1200;
+                this.duration = 2400;
                 this.wallActive = true;
                 this.wallPos = base.Position.ToVector3Shifted();
                 this.wallDir = GetVector(base.Position.ToVector3Shifted(), comp.SecondTarget.Cell.ToVector3Shifted());
@@ -95,20 +119,22 @@ namespace Wizardry
             {
                 if (Find.TickManager.TicksGame % 6 == 0)
                 {
-                    MoteMaker.ThrowDustPuff(base.Position, caster.Map, Rand.Range(.6f, .9f));                    
+                    EffectMaker.MakeEffect(ThingDef.Named("Mote_ThickDust"), base.Position.ToVector3Shifted(), this.Map, Rand.Range(.4f, .6f), Rand.Range(0, 360), Rand.Range(.8f, 1.6f), Rand.Range(-20, 20), 0, Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), false);   
                 }
             }
             else
-            {
-                if (Find.TickManager.TicksGame % 3 == 0)
+            {                
+                if (wallLength < wallLengthMax)
                 {
-                    if (wallLength < wallLengthMax)
+                    float magnitude = (base.Position.ToVector3Shifted() - Find.Camera.transform.position).magnitude;
+                    Find.CameraDriver.shaker.DoShake(10 / magnitude);
+                    for (int k = 0; k < wallLengthMax; k++)
                     {
                         List<Thing> cellList = this.wallPos.ToIntVec3().GetThingList(caster.Map);
                         bool hasWall = false;
                         for (int i = 0; i < cellList.Count(); i++)
                         {
-                            if (cellList[i].def.defName == "LotRW_WindWall")
+                            if (cellList[i].def.designationCategory == DesignationCategoryDefOf.Structure)
                             {
                                 hasWall = true;
                             }
@@ -119,7 +145,7 @@ namespace Wizardry
                             bool spawnWall = true;
                             for (int i = 0; i < cellList.Count(); i++)
                             {
-                                if (!cellList[i].def.EverHaulable)
+                                if (!cellList[i].def.EverHaulable && !(cellList[i] is Pawn))
                                 {
                                     if (cellList[i].def.altitudeLayer == AltitudeLayer.Building || cellList[i].def.altitudeLayer == AltitudeLayer.Item || cellList[i].def.altitudeLayer == AltitudeLayer.ItemImportant)
                                     {
@@ -128,14 +154,14 @@ namespace Wizardry
                                     }
                                     else
                                     {
-                                        if (cellList[i].def.defName.Contains("Mote") || (cellList[i].def.defName == "LotRW_Projectile_AirWall"))
+                                        if (cellList[i].def.defName.Contains("Mote") || (cellList[i].def.defName == "LotRW_Projectile_RockWall"))
                                         {
                                             //Log.Message("avoided storing " + cellList[i].def.defName);
                                         }
                                         else
                                         {
                                             this.despawnedThingList.Add(cellList[i]);
-                                            cellList[i].DeSpawn();                                            
+                                            cellList[i].DeSpawn();
                                         }
                                     }
                                 }
@@ -146,34 +172,29 @@ namespace Wizardry
                                     LaunchFlyingObect(cellList[i].Position + (Quaternion.AngleAxis(launchDir, Vector3.up) * wallDir).ToIntVec3(), cellList[i]);
                                 }
                             }
-                            if (spawnWall)
+                            if (spawnWall && Rand.Chance(this.wallSpawnChance))
                             {
                                 AbilityUser.SpawnThings tempSpawn = new SpawnThings()
                                 {
-                                    def = ThingDef.Named("LotRW_WindWall"),
+                                    def = spawnDef,
                                     spawnCount = 1
                                 };
                                 SingleSpawnLoop(tempSpawn, wallPos.ToIntVec3(), caster.Map);
                                 this.wallLength++;
                                 this.wallPositions.Add(wallPos.ToIntVec3());
+                                EffectMaker.MakeEffect(ThingDef.Named("Mote_ThickDust"), this.wallPos, this.Map, Rand.Range(.6f, .8f), Rand.Range(0, 360), Rand.Range(1f, 2f), Rand.Range(-20, 20), 0, Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), false);
                             }
                         }
 
                         this.wallPos += this.wallDir;
+                        EffectMaker.MakeEffect(ThingDef.Named("Mote_ThickDust"), this.wallPos, this.Map, Rand.Range(.6f, 1f), Rand.Range(0, 360), Rand.Range(.6f, 1f), Rand.Range(-20, 20), 0, Rand.Range(.4f, .6f), Rand.Range(.05f,.3f), Rand.Range(.4f, 1f), false);
 
-                        if (!this.wallPos.ToIntVec3().Walkable(caster.Map) || this.wallPos.ToIntVec3() == this.wallEnd)
+                        if (this.wallPos.ToIntVec3() == this.wallEnd)
                         {
                             this.wallPos -= this.wallDir;
                             this.wallLength = this.wallLengthMax;
                         }
-                    }
-
-                    for (int j = 0; j < this.wallPositions.Count(); j++)
-                    {
-                        int launchDir = Rand.Range(-100, -80);
-                        if (Rand.Chance(.5f)) { launchDir = Rand.Range(80, 100); }
-                        EffectMaker.MakeEffect(ThingDef.Named("Mote_DustPuff"), this.wallPositions.RandomElement().ToVector3Shifted(), caster.Map, Rand.Range(.6f, .8f), (Quaternion.AngleAxis(launchDir, Vector3.up) * wallDir).ToAngleFlat(), Rand.Range(2f, 5f), Rand.Range(100, 200), .04f, .03f, .8f, false);
-                    }
+                    } 
                 }
             }
         }
@@ -229,7 +250,19 @@ namespace Wizardry
             bool flag = this.age <= this.duration;
             if (!flag)
             {
-                for(int i =0; i < this.despawnedThingList.Count(); i++)
+                Building structure = null;
+                for (int j = 0; j < this.wallPositions.Count(); j++)
+                {                    
+                    structure = this.wallPositions[j].GetFirstBuilding(this.Map);
+                    if(structure != null)
+                    {
+                        structure.Destroy();
+                        EffectMaker.MakeEffect(ThingDef.Named("Mote_ThickDust"), this.wallPositions[j].ToVector3Shifted(), this.Map, Rand.Range(.6f, .8f), Rand.Range(0, 360), Rand.Range(.8f, 1.6f), Rand.Range(-20, 20), 0, Rand.Range(.2f, .3f), .05f, Rand.Range(.4f, .6f), false);
+                    }
+                    structure = null;
+                }
+
+                for (int i =0; i < this.despawnedThingList.Count(); i++)
                 {
                     GenSpawn.Spawn(this.despawnedThingList[i], this.despawnedThingList[i].Position, this.Map);
                 }

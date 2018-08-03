@@ -108,7 +108,7 @@ namespace Wizardry
                             if (victim != null && !victim.Downed && !victim.Dead && victim.Faction != this.caster.Faction)
                             {
                                 float distanceFromCenter = Mathf.Min((this.beamPos[i].ToIntVec3() - victim.Position).LengthHorizontal, 1);
-                                damageEntities(victim, 2 / distanceFromCenter);
+                                DamageEntities(victim, 2 / distanceFromCenter);
                                 HealthUtility.AdjustSeverity(victim, HediffDef.Named("LotRW_Blindness"), 1f / distanceFromCenter);
                             }
                             else
@@ -208,12 +208,12 @@ namespace Wizardry
         public void DrawBeam(Vector3 drawPos, float size)
         {
             float num = ((float)base.Map.Size.z - drawPos.z) * 1.4f;        //distance towards top of map from the target position
-            this.angle = ((anglePos.x - drawPos.x) * .3f);                  //beams originate from above caster (original position) head and the angle moves, not the entire beam
+            this.angle = ((anglePos.x - drawPos.x) * .3f);                  //beams originate from above caster (original position) head, and the angle moves, not the entire beam
             Vector3 a = Vector3Utility.FromAngleFlat(this.angle - 90f);     //angle of beam adjusted for quaternian
-            //matrix4x4 will draw the stretched beam with center at drawPos, so it must be adjusted so that the end of the beam appears at drawPos
-            //so we create a new vector and add half the length of the beam to the original position
+            //matrix4x4 will draw the stretched beam (matrix) with center at drawPos, so it must be adjusted so that the end of the beam appears at drawPos
+            //so we create a new vector and add half the length of the beam to the original position so that the end of the beam appears at drawPos
             Vector3 a2 = drawPos + a * num * 0.5f;                          //original position adjusted by half the beam length
-            a2.y = Altitudes.AltitudeFor(AltitudeLayer.MetaOverlays);       //mote depth
+            a2.y = Altitudes.AltitudeFor(AltitudeLayer.MetaOverlays);       //mote depth (should be drawn in front of everything else)
 
             //Color arg_50_0 = colorInt.ToColor;
             //Color color = arg_50_0;
@@ -225,7 +225,7 @@ namespace Wizardry
                 //Draw the beam
                 Matrix4x4 matrix = default(Matrix4x4);
                 //Create the graphics based on translation, rotation, and scaling
-                //Beam is draw where the bottom end of the beam looks like it's at the target position
+                //Beam is drawn where the bottom end of the beam looks like it's at the target position
                 matrix.SetTRS(a2, Quaternion.Euler(0f, this.angle, 0f), new Vector3(size, 1f, num));
                 Graphics.DrawMesh(MeshPool.plane10, matrix, Projectile_LightChaser.BeamMat, 0, null, 0, Projectile_LightChaser.MatPropertyBlock);
 
@@ -236,14 +236,14 @@ namespace Wizardry
                 matrix2.SetTRS(vectorPos, Quaternion.Euler(0f, this.angle, 0f), new Vector3(size, 1f, size));
                 Graphics.DrawMesh(MeshPool.plane10, matrix2, Projectile_LightChaser.BeamEndMat, 0, null, 0, Projectile_LightChaser.MatPropertyBlock);
 
-                //We want to soften the end point and create a more intense ending by adding light "splash" at the end of the beam, so add another, circular mesh at the end            
+                //Additional softening of the end point and add more intensity by adding light "splash" at the end of the beam, so add another, circular mesh at the end            
                 Matrix4x4 matrix3 = default(Matrix4x4);
                 matrix3.SetTRS(drawPos, Quaternion.Euler(0f, this.angle, 0f), new Vector3(10f * size, 1f, 10f * size));
                 Graphics.DrawMesh(MeshPool.plane10, matrix3, Projectile_LightChaser.BombardMat, 0, null, 0, Projectile_LightChaser.MatPropertyBlock);
             }
         }
 
-        public void damageEntities(Thing e, float amt)
+        public void DamageEntities(Thing e, float amt)
         {
             amt = Rand.Range(amt * .75f, amt * 1.25f);
             DamageInfo dinfo = new DamageInfo(DamageDefOf.Flame, Mathf.RoundToInt(amt), 2, (float)-1, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown);

@@ -39,7 +39,7 @@ namespace Wizardry
                     displayEffect.x += Rand.Range(-.3f, .3f);
                     displayEffect.y += Rand.Range(-.3f, .3f);
                     displayEffect.z += Rand.Range(-.3f, .3f);
-                    EffectMaker.MakeEffect(ThingDef.Named("Mote_LightningGlow"), displayEffect, this.Map, cellList[i].def.projectile.DamageAmount/8f);
+                    EffectMaker.MakeEffect(ThingDef.Named("Mote_LightningGlow"), displayEffect, this.Map, cellList[i].def.projectile.GetDamageAmount(1, null)/8f);
                     cellList[i].Destroy(DestroyMode.Vanish);
                 }
             }

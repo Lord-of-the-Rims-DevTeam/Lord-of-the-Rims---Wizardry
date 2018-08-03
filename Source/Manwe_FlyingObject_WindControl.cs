@@ -13,9 +13,9 @@ namespace Wizardry
     {
         protected Vector3 origin;
         protected Vector3 destination;
-        private int age = -1;
-        protected int ticksToImpact;
         private Vector3 flyingDirection = default(Vector3);
+        private int age = -1;
+        protected int ticksToImpact;        
         protected Thing launcher;
         protected Thing assignedTarget;
         protected Thing flyingThing;
@@ -270,12 +270,12 @@ namespace Wizardry
                     {
                         if(hitList[j] is Pawn)
                         {
-                            damageEntities(hitList[j], Rand.Range(6, 9), DamageDefOf.Crush);
+                            DamageEntities(hitList[j], Rand.Range(6, 9), DamageDefOf.Crush);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
                         else if(hitList[j] is Building)
                         {
-                            damageEntities(hitList[j], Rand.Range(8, 16), DamageDefOf.Crush);
+                            DamageEntities(hitList[j], Rand.Range(8, 16), DamageDefOf.Crush);
                             MoteMaker.ThrowMicroSparks(hitList[j].DrawPos, hitList[j].Map);
                         }
                         
@@ -389,8 +389,8 @@ namespace Wizardry
                     Pawn p = this.flyingThing as Pawn;
                     if (this.earlyImpact)
                     {
-                        damageEntities(p, this.impactForce, DamageDefOf.Blunt);
-                        damageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
+                        DamageEntities(p, this.impactForce, DamageDefOf.Blunt);
+                        DamageEntities(p, 2 * this.impactForce, DamageDefOf.Stun);
                     }
                 }
                 else if (flyingThing.def.thingCategories != null && (flyingThing.def.thingCategories.Contains(ThingCategoryDefOf.Chunks) || flyingThing.def.thingCategories.Contains(ThingCategoryDef.Named("StoneChunks"))))
@@ -437,7 +437,7 @@ namespace Wizardry
                         }
                     }
                     Thing p = this.flyingThing;
-                    damageEntities(p, 305, DamageDefOf.Blunt);
+                    DamageEntities(p, 305, DamageDefOf.Blunt);
                 }                
                 
                 this.Destroy(DestroyMode.Vanish);
@@ -453,7 +453,7 @@ namespace Wizardry
             }
         }
 
-        public void damageEntities(Thing e, float d, DamageDef type)
+        public void DamageEntities(Thing e, float d, DamageDef type)
         {
             int amt = Mathf.RoundToInt(Rand.Range(.75f, 1.25f) * d);
             DamageInfo dinfo = new DamageInfo(type, amt, 0, (float)-1, this.pawn, null, null, DamageInfo.SourceCategory.ThingOrUnknown);
