@@ -144,7 +144,7 @@ namespace Wizardry
                             Vector3 moteDirection = GetVector(this.origin.ToIntVec3(), intVec);
                             EffectMaker.MakeEffect(ThingDef.Named("Mote_Rubble"), intVec.ToVector3Shifted(), base.Map, Rand.Range(.3f, .5f), (Quaternion.AngleAxis(90, Vector3.up) * moteDirection).ToAngleFlat(), 8f, 0);
                             EffectMaker.MakeEffect(ThingDef.Named("Mote_Rubble"), intVec.ToVector3Shifted(), base.Map, Rand.Range(.3f, .6f), (Quaternion.AngleAxis(Rand.Range(-70, -110), Vector3.up) * moteDirection).ToAngleFlat(), 6f, 0);
-                            GenExplosion.DoExplosion(intVec, base.Map, .4f, WizardryDefOf.LotRW_RockFragments, this.launcher, Rand.Range(6, 16), 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding, null, null, null, ThingDef.Named("Filth_RockRubble"), .4f, 1, false, null, 0f, 1, 0, false);
+                            GenExplosion.DoExplosion(intVec, base.Map, .4f, WizardryDefOf.LotRW_RockFragments, this.launcher, Rand.Range(6, 16), 0, SoundDefOf.Pawn_Melee_Punch_HitBuilding, null, null, null, ThingDef.Named("Filth_RubbleRock"), .4f, 1, false, null, 0f, 1, 0, false);
                             MoteMaker.ThrowSmoke(intVec.ToVector3Shifted(), base.Map, Rand.Range(.6f, 1f));
                             if (intVec == this.boltPosition)
                             {
