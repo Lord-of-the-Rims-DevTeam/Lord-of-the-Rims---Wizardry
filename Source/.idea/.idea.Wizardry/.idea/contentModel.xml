@@ -3,15 +3,63 @@
   <component name="ContentModelStore">
     <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Lord-of-the-Rims---Wizardry\Assemblies" t="ExcludeRecursive" />
     <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Lord-of-the-Rims---Wizardry\Source" t="IncludeRecursive">
+      <e p="Aule_Projectile_RendEarth.cs" t="Include" />
+      <e p="Aule_Projectile_RockWall.cs" t="Include" />
       <e p="CompWizardry.cs" t="Include" />
+      <e p="Effect_MeshMaker.cs" t="Include" />
+      <e p="EffectMaker.cs" t="Include" />
+      <e p="ExplosionUtility.cs" t="Include" />
+      <e p="FlyingObject_Spinning.cs" t="Include" />
+      <e p="Harmony_LotRW.cs" t="Include" />
+      <e p="JobDriver_StormCalling.cs" t="Include" />
+      <e p="Libraries" t="Include">
+        <e p="Building_Bookcase.cs" t="Include" />
+        <e p="Building_InternalStorage.cs" t="Include" />
+        <e p="CompProperties_StorageGraphic.cs" t="Include" />
+        <e p="CompStorageGraphic.cs" t="Include" />
+        <e p="Item_JournalPage.cs" t="Include" />
+        <e p="JobDriver_FreeWrite.cs" t="Include" />
+        <e p="JobDriver_ReadABook.cs" t="Include" />
+        <e p="JobDriver_ReturnBook.cs" t="Include" />
+        <e p="JobDriver_Write.cs" t="Include" />
+        <e p="RoomRoleWorker_WizardLibrary.cs" t="Include" />
+        <e p="ThingBook.cs" t="Include" />
+        <e p="WorkGiver_ReturnBooks.cs" t="Include" />
+      </e>
+      <e p="LotRW_Building_BlockingTraversable.cs" t="Include" />
+      <e p="Manwe_Effect_WindControl.cs" t="Include" />
+      <e p="Manwe_FlyingObject_WindControl.cs" t="Include" />
+      <e p="Manwe_Projectile_AirWall.cs" t="Include" />
+      <e p="Manwe_Projectile_Vortex.cs" t="Include" />
+      <e p="Manwe_Verb_AirWall.cs" t="Include" />
+      <e p="MatPool.cs" t="Include" />
+      <e p="MeshMaker.cs" t="Include" />
+      <e p="Nienna_JobDriver_HealingTouch.cs" t="Include" />
+      <e p="Nienna_Verb_HealingRain.cs" t="Include" />
+      <e p="Nienna_Verb_HealingTouch.cs" t="Include" />
+      <e p="Nienna_WorkGiver_HealingTouch.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="PawnAbilityAttunement.cs" t="Include" />
+      <e p="Projectile_FlameSong.cs" t="Include" />
+      <e p="Projectile_LightChaser.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="AssemblyInfo.cs" t="Include" />
       </e>
       <e p="SpellDefAttunement.cs" t="Include" />
+      <e p="Ulmo_Effect_RainDance.cs" t="Include" />
+      <e p="Ulmo_Effect_WolfSong.cs" t="Include" />
+      <e p="Ulmo_FlyingObject_RainDance.cs" t="Include" />
+      <e p="Ulmo_FlyingObject_WolfSong.cs" t="Include" />
+      <e p="Ulmo_Verb_FlameSong.cs" t="Include" />
       <e p="UtilityWizardry.cs" t="Include" />
+      <e p="Varda_FlyingObject_StreamingFlame.cs" t="Include" />
+      <e p="Varda_Projectile_ConeOfFire.cs" t="Include" />
+      <e p="Varda_Projectile_FocusFlames.cs" t="Include" />
+      <e p="Varda_Projectile_RainOfFire.cs" t="Include" />
+      <e p="Verb_BLOS.cs" t="Include" />
+      <e p="Verb_StormCalling.cs" t="Include" />
+      <e p="WizardAbilityDef.cs" t="Include" />
       <e p="Wizardry.csproj" t="IncludeRecursive" />
       <e p="Wizardry.sln" t="IncludeFlat" />
       <e p="WizardryDefOf.cs" t="Include" />

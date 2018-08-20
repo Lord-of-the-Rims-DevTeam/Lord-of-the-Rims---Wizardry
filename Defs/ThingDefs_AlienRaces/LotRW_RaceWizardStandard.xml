@@ -6,7 +6,7 @@
 	<race>LotRW_WizardStandardRace</race>
     <label>colonist (wizard)</label>
     <defaultFactionType>PlayerColony</defaultFactionType>
-    <backstoryCategory>LotRW_BackstoryWizard</backstoryCategory>
+    <backstoryCategories><li>LotRW_BackstoryWizard</li></backstoryCategories>
     <chemicalAddictionChance>0.0</chemicalAddictionChance>
     <apparelTags>
       <li>LotRW_Wizard</li>
@@ -24,7 +24,7 @@
     <description>Someone who is never late and means to arrive precisely when they mean to.</description>
 	<alienRace>
 	  <generalSettings>
-	    <pawnsSpecificBackstories>true</pawnsSpecificBackstories>
+	    <allowHumanBios>false</allowHumanBios>
 		<immuneToAge>true</immuneToAge>
 	    <alienPartGenerator>
           <alienbodytypes>

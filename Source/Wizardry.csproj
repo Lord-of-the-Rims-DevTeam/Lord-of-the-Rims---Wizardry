@@ -56,6 +56,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Building_Bookcase.cs" />
+    <Compile Include="Libraries\Building_InternalStorage.cs" />
+    <Compile Include="Libraries\CompProperties_StorageGraphic.cs" />
+    <Compile Include="Libraries\CompStorageGraphic.cs" />
+    <Compile Include="Libraries\Item_JournalPage.cs" />
+    <Compile Include="Libraries\JobDriver_FreeWrite.cs" />
+    <Compile Include="Libraries\JobDriver_ReadABook.cs" />
+    <Compile Include="Libraries\JobDriver_ReturnBook.cs" />
+    <Compile Include="Libraries\JobDriver_Write.cs" />
+    <Compile Include="Libraries\RoomRoleWorker_WizardLibrary.cs" />
+    <Compile Include="Libraries\ThingBook.cs" />
+    <Compile Include="Libraries\WorkGiver_ReturnBooks.cs" />
     <Compile Include="Nienna_WorkGiver_HealingTouch.cs" />
     <Compile Include="Verb_BLOS.cs" />
     <Compile Include="MeshMaker.cs" />
