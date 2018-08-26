@@ -110,7 +110,6 @@
       <AccuracyMedium>1.0</AccuracyMedium>
       <AccuracyLong>1.0</AccuracyLong>
       <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
-      <Weapon_Bulk>0.5</Weapon_Bulk>
     </statBases>
     <techLevel>Neolithic</techLevel>
     <destroyOnDrop>false</destroyOnDrop>
@@ -164,7 +163,6 @@
       <AccuracyMedium>1.0</AccuracyMedium>
       <AccuracyLong>1.0</AccuracyLong>
       <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
-      <Weapon_Bulk>0.5</Weapon_Bulk>
     </statBases>
     <techLevel>Neolithic</techLevel>
     <destroyOnDrop>false</destroyOnDrop>

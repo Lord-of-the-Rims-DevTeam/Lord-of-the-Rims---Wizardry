@@ -36,8 +36,8 @@
       <HintPath>..\..\JecsTools-master\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AbilityUser">
-      <HintPath>..\..\JecsTools-master\Assemblies\AbilityUser.dll</HintPath>
+    <Reference Include="AbilityUser, Version=1.18.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\JecsTools\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">

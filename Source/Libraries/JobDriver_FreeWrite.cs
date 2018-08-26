@@ -43,26 +43,26 @@ namespace Wizardry
             };
             toil.defaultCompleteMode = ToilCompleteMode.Delay;
             toil.defaultDuration = base.job.def.joyDuration;
-            toil.AddFinishAction(delegate
-            {
-                if (Cthulhu.Utility.IsCosmicHorrorsLoaded())
-                {
-                    try
-                    {
-                        if (Cthulhu.Utility.HasSanityLoss(this.pawn))
-                        {
-                            Cthulhu.Utility.ApplySanityLoss(this.pawn, -sanityRestoreRate, 1);
-                            Messages.Message(this.pawn.ToString() + " has restored some sanity using the " + this.TargetA.Thing.def.label + ".", new TargetInfo(this.pawn.Position, this.pawn.Map), MessageTypeDefOf.NeutralEvent);// .Standard);
-                        }
-                    }
-                    catch
-                    {
-                        Log.Message("Error loading Sanity Hediff.");    
-                    }
-                }
-
-                JoyUtility.TryGainRecRoomThought(this.pawn);
-            });
+//            toil.AddFinishAction(delegate
+//            {
+//                if (Cthulhu.Utility.IsCosmicHorrorsLoaded())
+//                {
+//                    try
+//                    {
+//                        if (Cthulhu.Utility.HasSanityLoss(this.pawn))
+//                        {
+//                            Cthulhu.Utility.ApplySanityLoss(this.pawn, -sanityRestoreRate, 1);
+//                            Messages.Message(this.pawn.ToString() + " has restored some sanity using the " + this.TargetA.Thing.def.label + ".", new TargetInfo(this.pawn.Position, this.pawn.Map), MessageTypeDefOf.NeutralEvent);// .Standard);
+//                        }
+//                    }
+//                    catch
+//                    {
+//                        Log.Message("Error loading Sanity Hediff.");    
+//                    }
+//                }
+//
+//                JoyUtility.TryGainRecRoomThought(this.pawn);
+//            });
             yield return toil;
             yield break;
         }

@@ -18,12 +18,35 @@
     <backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
   </PawnKindDef>
 
+  <AlienRace.RaceSettings>
+    <defName>LotRW_WizardSettings</defName>
+	  <pawnKindSettings>
+		<startingColonists>
+		  <li>
+			<pawnKindEntries>
+			  <li>
+				<kindDefs>
+				  <li>LotRW_WizardColonist</li>
+				</kindDefs>
+				<chance>10.0</chance>
+			  </li>
+			</pawnKindEntries>
+			<factionDefs>
+			  <li>PlayerColony</li> 
+			  <li>LotRPlayerColony</li> 
+			</factionDefs>
+		  </li>
+		</startingColonists>
+	  </pawnKindSettings>
+  </AlienRace.RaceSettings>
+
   <AlienRace.ThingDef_AlienRace ParentName="BasePawn">
     <defName>LotRW_WizardStandardRace</defName>
     <label>wizard</label>
     <description>Someone who is never late and means to arrive precisely when they mean to.</description>
 	<alienRace>
 	  <generalSettings>
+        <humanRecipeImport>true</humanRecipeImport>
 	    <allowHumanBios>false</allowHumanBios>
 		<immuneToAge>true</immuneToAge>
 	    <alienPartGenerator>
@@ -43,7 +66,7 @@
 			  <inFrontOfBody>true</inFrontOfBody>
 			  <layerOffset>-0.275</layerOffset>
 			  <offsets>
-				  <front>
+				  <south>
 					<bodyTypes>
 						<Male>(-0.43,0.5)</Male>
 						<Female>(-0.43,0.5)</Female>
@@ -58,8 +81,8 @@
 						<Pointy_Narrow>(-0.43,0.5)</Pointy_Narrow>
 						<Wide_Narrow>(-0.43,0.5)</Wide_Narrow>
 					</crownTypes>
-				  </front>
-				  <back>
+				  </south>
+				  <north>
 					<bodyTypes>
 						<Male>(0,0.9)</Male>
 						<Female>(0,0.9)</Female>
@@ -74,8 +97,8 @@
 						<Pointy_Narrow>(0,0.9)</Pointy_Narrow>
 						<Wide_Narrow>(0,0.9)</Wide_Narrow>
 					</crownTypes>
-				  </back>
-				  <side>
+				  </north>
+				  <east>
 					<bodyTypes>
 						<Male>(-0.43,0.5)</Male>
 						<Female>(-0.43,0.5)</Female>
@@ -90,7 +113,7 @@
 						<Pointy_Narrow>(-0.43,0.5)</Pointy_Narrow>
 						<Wide_Narrow>(-0.43,0.5)</Wide_Narrow>
 					</crownTypes>
-				  </side>
+				  </east>
 			  </offsets>
 		      <useSkinColor>true</useSkinColor>
 			  <hiddenUnderApparelFor>
@@ -117,23 +140,6 @@
 		</alienPartGenerator>
 		
 	  </generalSettings>
-	  <pawnKindSettings>
-		<startingColonists>
-		  <li>
-			<pawnKindEntries>
-			  <li>
-				<kindDefs>
-				  <li>LotRW_WizardColonist</li>
-				</kindDefs>
-				<chance>10.0</chance>
-			  </li>
-			</pawnKindEntries>
-			<factionDefs>
-			  <li>PlayerColony</li> 
-			</factionDefs>
-		  </li>
-		</startingColonists>
-	  </pawnKindSettings>
 	  <hairSettings>
         <hasHair>true</hasHair>	  
 		<hairTags>
@@ -193,7 +199,7 @@
         <power>5</power>
         <cooldownTime>1.8</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <commonality>0.2</commonality>
+        <chanceFactor>0.2</chanceFactor>
       </li>
     </tools>
     <race>
@@ -263,28 +269,6 @@
         <li>OrganicStandard</li>
       </hediffGiverSets>
     </race>
-    <recipes>
-      <li>InstallPowerClaw</li>
-      <li>InstallScytherBlade</li>
-      <li>InstallBionicEye</li>
-      <li>InstallBionicArm</li>
-      <li>InstallBionicLeg</li>
-      <li>InstallSimpleProstheticArm</li>
-      <li>InstallSimpleProstheticLeg</li>
-      <li>InstallPegLeg</li>
-      <li>InstallDenture</li>
-      <li>InstallJoywire</li>
-      <li>InstallPainstopper</li>
-      <li>InstallNaturalHeart</li>
-      <li>InstallNaturalLung</li>
-      <li>InstallNaturalKidney</li>
-      <li>InstallNaturalLiver</li>
-      <li>ExciseCarcinoma</li>
-      <li>AdministerMechSerumHealer</li>
-      <li>RemoveBodyPart</li>
-      <li>Euthanize</li>
-      <li>Anesthetize</li>
-    </recipes>
   </AlienRace.ThingDef_AlienRace>
   
   
