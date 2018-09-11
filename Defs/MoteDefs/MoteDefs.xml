@@ -134,7 +134,7 @@
   <ThingDef ParentName="MoteBase">
     <defName>Mote_WolfSong_North</defName>
     <graphicData>
-      <texPath>Effects/WolfSong_back</texPath>
+      <texPath>Effects/WolfSong_north</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
@@ -147,7 +147,7 @@
    <ThingDef ParentName="MoteBase">
     <defName>Mote_WolfSong_South</defName>
     <graphicData>
-      <texPath>Effects/WolfSong_front</texPath>
+      <texPath>Effects/WolfSong_south</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
@@ -160,7 +160,7 @@
   <ThingDef ParentName="MoteBase">
     <defName>Mote_WolfSong_East</defName>
     <graphicData>
-      <texPath>Effects/WolfSong_right</texPath>
+      <texPath>Effects/WolfSong_east</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
@@ -173,7 +173,7 @@
   <ThingDef ParentName="MoteBase">
     <defName>Mote_WolfSong_West</defName>
     <graphicData>
-      <texPath>Effects/WolfSong_left</texPath>
+      <texPath>Effects/WolfSong_west</texPath>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>

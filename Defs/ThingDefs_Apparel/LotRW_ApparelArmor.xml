@@ -2,7 +2,7 @@
 <Defs>
 
 
-  <ThingDef ParentName="LotRW_ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>LotRW_Apparel_Cape</defName>
     <label>wizard cape</label>
     <description>A fashionable cape that seems to fold just right.</description>
@@ -69,7 +69,7 @@
     </colorGenerator>
   </ThingDef>
 
-  <ThingDef ParentName="LotRW_ApparelMakeableBase">
+  <ThingDef ParentName="ApparelMakeableBase">
     <defName>LotRW_Apparel_Robe</defName>
     <label>wizard robe</label>
     <description>A simple robe with an extra pouch or two for holding items that may or may not have magical importance.</description>
@@ -132,7 +132,7 @@
     </colorGenerator>
   </ThingDef>
   
-  <ThingDef ParentName="LotRW_HatMakeableBase">
+  <ThingDef ParentName="HatMakeableBase">
     <defName>LotRW_Apparel_WizardHat</defName>
     <label>wizard hat</label>
     <description>A wide-brimmed conical hat that droops over so slightly -- a status symbol of an important traveler. Also, apparently, without it a wizard looks quite un-wizardly.</description>
@@ -140,7 +140,7 @@
       <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Pawn/Istari/Apparel/nackbladLOTR_GandalfHat_front</texPath>
+      <texPath>Things/Pawn/Istari/Apparel/nackbladLOTR_GandalfHat_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <costStuffCount>25</costStuffCount>

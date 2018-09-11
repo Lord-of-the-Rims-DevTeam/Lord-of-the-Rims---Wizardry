@@ -27,7 +27,7 @@
 <AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
     <defName>LotRW_BackstoryWizardAdultOne</defName>
     <title>Wandering wizard</title>
-    <baseDescription>NAME wandered the world, seeking out ways to fulfill their Vala's requests through their adventures.</baseDescription>
+    <baseDescription>[PAWN_nameDef] wandered the world, seeking out ways to fulfill their Vala's requests through their adventures.</baseDescription>
 	<slot>Adulthood</slot>
     <skillGains>      
 	  <li>
@@ -52,7 +52,7 @@
 <AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
     <defName>LotRW_BackstoryWizardAdultTwo</defName>
     <title>Tower wizard</title>
-    <baseDescription>NAME fortified their position in the world by constructing a massive tower and tending to its servants. However, soaring to such great heights left HIM with an air of superiority that tended to upset HIS servants and guests.</baseDescription>
+    <baseDescription>[PAWN_nameDef] fortified their position in the world by constructing a massive tower and tending to its servants. However, soaring to such great heights left [PAWN_objective] with an air of superiority that tended to upset [PAWN_possessive] servants and guests.</baseDescription>
 	<slot>Adulthood</slot>
     <skillGains>      
 	  <li>
@@ -83,7 +83,7 @@
 <AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
     <defName>LotRW_BackstoryWizardAdultThree</defName>
     <title>Woodland wizard</title>
-    <baseDescription>NAME mostly kept to themselves deep in the woods. Their reclusion in the woods lent to their expertise in wildlife flora and fauna.</baseDescription>
+    <baseDescription>[PAWN_nameDef] mostly kept to themselves deep in the woods. Their reclusion in the woods lent to their expertise in wildlife flora and fauna.</baseDescription>
 	<slot>Adulthood</slot>
     <skillGains>      
 	  <li>
@@ -113,7 +113,7 @@
 <AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
     <defName>LotRW_BackstoryWizardAdultFour</defName>
     <title>Alchemist wizard</title>
-    <baseDescription>NAME sought nothing more than to attune the elements to their aid by crafting concoctions, doodads, and salves from the flora and fauna around them for various purposes.</baseDescription>
+    <baseDescription>[PAWN_nameDef] sought nothing more than to attune the elements to their aid by crafting concoctions, doodads, and salves from the flora and fauna around them for various purposes.</baseDescription>
 	<slot>Adulthood</slot>
     <skillGains>      
 	  <li>
@@ -139,7 +139,7 @@
 <AlienRace.BackstoryDef ParentName="LotRW_BackstoryWizard">
     <defName>LotRW_BackstoryWizardAdultFour</defName>
     <title>War wizard</title>
-    <baseDescription>NAME was honed for battle over the centuries in service of HIS Valar.</baseDescription>
+    <baseDescription>[PAWN_nameDef] was honed for battle over the centuries in service of [PAWN_possessive] Valar.</baseDescription>
 	<slot>Adulthood</slot>
     <skillGains>      
 	  <li>
