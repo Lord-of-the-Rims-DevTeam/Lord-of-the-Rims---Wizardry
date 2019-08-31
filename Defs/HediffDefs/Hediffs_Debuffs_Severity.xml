@@ -126,4 +126,87 @@
     </stages>
   </HediffDef>  
   
+  <HediffDef>
+    <defName>LotRW_HauntedHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, .8)</defaultLabelColor>
+    <label>Haunted</label>
+	<isBad>true</isBad>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-50</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>Haunted</label>
+        <minSeverity>0.1</minSeverity>
+		<becomeVisible>false</becomeVisible>
+		<mentalStateGivers>
+			<li>
+			 <mentalState>PanicFlee</mentalState>
+			 <mtbDays>0.03</mtbDays>
+			</li>
+			<li>
+			  <mentalState>Berserk</mentalState>
+			  <mtbDays>0.06</mtbDays>
+			</li>
+		</mentalStateGivers>
+        <capMods>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>      
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>LotRW_DarknessHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Darkness</label>
+    <defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<maxSeverity>3.0</maxSeverity>
+	<isBad>true</isBad>
+	<initialSeverity>1</initialSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-200</severityPerDay>
+      </li>
+    </comps>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+		  <li>
+			  <capacity>Sight</capacity>
+			  <setMax>0.5</setMax>
+		  </li> 
+		</capMods>
+      </li>
+	  <li>
+        <label></label>
+        <minSeverity>2</minSeverity>
+		<becomeVisible>true</becomeVisible>
+		<capMods>
+		  <li>
+			  <capacity>Sight</capacity>
+			  <setMax>0.3</setMax>
+		  </li> 
+		</capMods>
+      </li>
+	</stages>
+  </HediffDef>
+  
 </Defs>

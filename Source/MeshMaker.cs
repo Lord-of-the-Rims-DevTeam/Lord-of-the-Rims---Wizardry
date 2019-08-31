@@ -19,8 +19,9 @@ namespace Wizardry
         private float meshContortionMagnitude = 12f;
 
         private Vector2 shadowVector; //currently unused
-        private IntVec3 meshStart = IntVec3.Invalid;
-        private IntVec3 meshEnd = IntVec3.Invalid;
+        private Vector3 meshStart = default(Vector3);
+        private Vector3 meshEnd = default(Vector3);
+        private bool startIsVec = false;
         private Mesh boltMesh = null;
         private static List<Mesh> boltMeshes = new List<Mesh>();
         private static readonly SkyColorSet MeshSkyColors = new SkyColorSet(new Color(0.9f, 0.95f, 1f), new Color(0.784313738f, 0.8235294f, 0.847058833f), new Color(0.9f, 0.95f, 1f), 1.15f);
@@ -39,8 +40,8 @@ namespace Wizardry
         {
             this.map = map;
             this.meshMat = meshMat;
-            this.meshStart = meshStart;
-            this.meshEnd = meshEnd;
+            this.meshStart = meshStart.ToVector3ShiftedWithAltitude(altitudeLayer);
+            this.meshEnd = meshEnd.ToVector3ShiftedWithAltitude(altitudeLayer);
             this.meshContortionMagnitude = meshContortionMagnitude;
             this.altitudeLayer = altitudeLayer;
             this.durationSolid = durationSolid;
@@ -49,24 +50,38 @@ namespace Wizardry
             //this.shadowVector = new Vector2(Rand.Range(-5f, 5f), Rand.Range(-5f, 0f));
         }
 
+        public MeshMaker(Map map, Material meshMat, Vector3 meshStart, Vector3 meshEnd, float meshContortionMagnitude, AltitudeLayer altitudeLayer, int durationSolid, int fadeOutTicks, int fadeInTicks) : base(map)
+        {
+            this.map = map;
+            this.meshMat = meshMat;
+            this.meshStart = meshStart;
+            this.meshEnd = meshEnd;
+            this.meshContortionMagnitude = meshContortionMagnitude;
+            this.altitudeLayer = altitudeLayer;
+            this.durationSolid = durationSolid;
+            this.fadeOutTicks = fadeOutTicks;
+            this.fadeInTicks = fadeInTicks;
+            //this.shadowVector = new Vector2(Rand.Range(-5f, 5f), Rand.Range(-5f, 0f));
+        }
+
         public override void FireEvent()
         {
-            if(this.meshStart.IsValid)
+            if(this.meshStart != default(Vector3))
             {
-                GetVector(this.meshStart.ToVector3ShiftedWithAltitude(this.altitudeLayer), this.meshEnd.ToVector3ShiftedWithAltitude(this.altitudeLayer));
+                GetVector(this.meshStart, this.meshEnd);
             }
             this.boltMesh = this.RandomBoltMesh;
         }
 
         public override void WeatherEventDraw()
         {
-            if (this.meshStart.IsValid)
+            if (this.meshStart != default(Vector3))
             {
-                Graphics.DrawMesh(this.boltMesh, this.meshStart.ToVector3ShiftedWithAltitude(this.altitudeLayer), Quaternion.Euler(0f, this.angle, 0f), FadedMaterialPool.FadedVersionOf(this.meshMat, this.MeshBrightness), 0);
+                Graphics.DrawMesh(this.boltMesh, this.meshStart, Quaternion.Euler(0f, this.angle, 0f), FadedMaterialPool.FadedVersionOf(this.meshMat, this.MeshBrightness), 0);
             }
             else
             {
-                Graphics.DrawMesh(this.boltMesh, this.meshEnd.ToVector3ShiftedWithAltitude(this.altitudeLayer), Quaternion.identity, FadedMaterialPool.FadedVersionOf(this.meshMat, this.MeshBrightness), 0);
+                Graphics.DrawMesh(this.boltMesh, this.meshEnd, Quaternion.identity, FadedMaterialPool.FadedVersionOf(this.meshMat, this.MeshBrightness), 0);
             }
         }
 
@@ -83,9 +98,9 @@ namespace Wizardry
                 if (MeshMaker.boltMeshes.Count < this.boltMaxCount)
                 {
                     Mesh mesh;
-                    if (this.meshStart.IsValid)
+                    if (this.meshStart != default(Vector3))
                     {
-                        mesh = Effect_MeshMaker.NewBoltMesh(Vector3.Distance(this.meshStart.ToVector3ShiftedWithAltitude(this.altitudeLayer), this.meshEnd.ToVector3ShiftedWithAltitude(this.altitudeLayer)), this.meshContortionMagnitude);
+                        mesh = Effect_MeshMaker.NewBoltMesh(Vector3.Distance(this.meshStart, this.meshEnd), this.meshContortionMagnitude);
                     }
                     else
                     {

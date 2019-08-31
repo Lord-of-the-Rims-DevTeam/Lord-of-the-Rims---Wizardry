@@ -56,6 +56,9 @@ namespace Wizardry
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Nienna_HealingTouch);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Aule_RockWall);
                 this.RemovePawnAbility(WizardryDefOf.LotRW_Aule_RendEarth);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Mandos_Haunt);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Mandos_Doom);
+                this.RemovePawnAbility(WizardryDefOf.LotRW_Mandos_Darkness);
 
                 this.AddPawnAbility(WizardryDefOf.LotRW_Varda_FocusFlames);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Varda_ConeOfFire);
@@ -72,6 +75,9 @@ namespace Wizardry
                 this.AddPawnAbility(WizardryDefOf.LotRW_Nienna_HealingTouch);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Aule_RockWall);
                 this.AddPawnAbility(WizardryDefOf.LotRW_Aule_RendEarth);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Mandos_Haunt);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Mandos_Doom);
+                this.AddPawnAbility(WizardryDefOf.LotRW_Mandos_Darkness);
                 this.doOnce = false;
             }
         }

@@ -31,6 +31,31 @@
 			<destroyedLabel>crushed</destroyedLabel>
 			<destroyedOutLabel>crushed</destroyedOutLabel>
 	</injuryProps>
-  </HediffDef>	
+  </HediffDef>
+
+  <HediffDef ParentName="LotRW_InjuryBase">
+    <defName>LotRW_HauntHD</defName>
+    <label>Haunted</label>
+    <displayWound>false</displayWound>
+	<labelNoun>an injury</labelNoun>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>sutured</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>withered</permanentLabel>
+      </li>
+    </comps>
+	<injuryProps>
+		<painPerSeverity>0.0125</painPerSeverity>
+		<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+		<bleedRate>0.00625</bleedRate>
+		<canMerge>true</canMerge>
+			<destroyedLabel>withered</destroyedLabel>
+			<destroyedOutLabel>withered</destroyedOutLabel>
+	</injuryProps>
+  </HediffDef>  
 
 </Defs>

@@ -37,4 +37,34 @@
 	</stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>LotRW_DoomHD</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+	<label>Doom</label>
+    <defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	<makesSickThought>false</makesSickThought>
+	<tendable>false</tendable>
+    <makesAlert>false</makesAlert>
+	<minSeverity>0.001</minSeverity>
+	<maxSeverity>5.0</maxSeverity>
+	<isBad>true</isBad>
+	<initialSeverity>.5</initialSeverity>
+	<comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1200</min>
+          <max>1800</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+	<stages>
+      <li>
+        <label></label>
+        <minSeverity>0.001</minSeverity>
+		<becomeVisible>true</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+  
 </Defs>

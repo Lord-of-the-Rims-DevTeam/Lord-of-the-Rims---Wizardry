@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <!-- Haunt -->
+  
+  <ThingDef ParentName="BaseBullet" Name="FlyingObject_Haunt">
+	   <defName>FlyingObject_Haunt</defName>
+	   <thingClass>Wizardry.Mandos_FlyingObject_Haunt</thingClass>
+	   <label>haunt</label>
+	   <graphicData>
+			<texPath>Projectiles/blackorb</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	   <projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<speed>30</speed>
+	   </projectile>
+	</ThingDef>
+
+  <Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Mandos_Haunt</defName>
+        <label>Haunt</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Haunts a target with fear and pain.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>Wizardry.Mandos_Effect_Haunt</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
+            <abilityDef>LotRW_Mandos_Haunt</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>50</range>
+			<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+            <burstShotCount>3</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+	  <!-- Doom -->
+	<Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Mandos_Doom</defName>
+        <label>Doom</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Curses a target and makes their actions to backfire.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>Wizardry.Mandos_Verb_Doom</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_DefaultProjectile</defaultProjectile>
+            <abilityDef>LotRW_Mandos_Doom</abilityDef>
+			<isViolent>true</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>50</range>
+			<ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+            <burstShotCount>3</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetLocations>false</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+	
+		  <!-- Darkness -->
+		  
+	<ThingDef ParentName="BaseBullet" Class="AbilityUser.ProjectileDef_Ability">
+		<thingClass>Wizardry.Mandos_Projectile_Darkness</thingClass>
+	    <defName>LotRW_Projectile_Darkness</defName>
+        <label>darkness projectile</label>
+        <graphicData>
+			<texPath>Projectiles/invis</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Stun</damageDef>
+            <damageAmountBase>0</damageAmountBase>
+            <speed>999</speed>
+			<explosionRadius>7</explosionRadius>
+			<postExplosionSpawnChance>1</postExplosionSpawnChance>
+        </projectile>
+    </ThingDef>
+	
+	<Wizardry.WizardAbilityDef ParentName="BaseWizardAbility">
+        <defName>LotRW_Mandos_Darkness</defName>
+        <label>Darkness</label>
+        <uiIconPath>UI/defaultUI</uiIconPath>
+        <description>Envelopes an area of the map in darkness, blinding any within.</description>
+		<MainVerb Class="AbilityUser.VerbProperties_Ability">
+            <verbClass>AbilityUser.Verb_UseAbility</verbClass>
+				<tooltipShowProjectileDamage>false</tooltipShowProjectileDamage>
+				<tooltipShowExtraDamages>false</tooltipShowExtraDamages>
+				<tooltipShowHediffsToApply>false</tooltipShowHediffsToApply>
+				<tooltipShowMentalStatesToApply>false</tooltipShowMentalStatesToApply>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>LotRW_Projectile_Darkness</defaultProjectile>
+            <abilityDef>LotRW_Mandos_Darkness</abilityDef>
+			<isViolent>false</isViolent>
+            <warmupTime>.1</warmupTime>
+            <SecondsToRecharge>5.0</SecondsToRecharge>
+            <range>50</range>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>VibrationLow</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>2</muzzleFlashScale>
+		    <AlwaysHits>true</AlwaysHits>
+            <isPrimary>true</isPrimary>
+			<targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </MainVerb>
+    </Wizardry.WizardAbilityDef>
+  
+</Defs>

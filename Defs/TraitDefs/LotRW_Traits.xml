@@ -3,7 +3,8 @@
 
   <TraitDef>
     <defName>LotRW_Istari</defName>
-    <commonality>0.0000001</commonality>
+    <commonality>0</commonality>
+	<ignoreConfigErrors>true</ignoreConfigErrors>
     <degreeDatas>
       <li>
         <label>Istari</label>

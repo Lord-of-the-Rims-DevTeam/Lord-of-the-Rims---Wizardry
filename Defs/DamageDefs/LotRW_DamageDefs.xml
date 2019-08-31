@@ -26,5 +26,22 @@
 		<explosionColorEdge>(1, 0.8, 0.6)</explosionColorEdge>
 		<soundExplosion>SoftExplosion</soundExplosion>
 	</DamageDef>
+	
+	<DamageDef ParentName="LotRW_LocalInjuryBase">
+		<defName>LotRW_HauntDD</defName>
+		<label>Haunted</label>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} was haunted.</deathMessage>
+		<hediff>LotRW_HauntHD</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<defaultDamage>4</defaultDamage>
+		<armorCategory>Sharp</armorCategory>
+		<additionalHediffs>
+			<li>
+				<hediff>LotRW_HauntedHD</hediff>
+				<severityPerDamageDealt>.1</severityPerDamageDealt>
+			</li>
+		</additionalHediffs>
+	</DamageDef>
 
 </Defs>

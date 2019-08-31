@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="BaseWizardryGas" Abstract="True">
+    <thingClass>Gas</thingClass>
+    <label>gas</label>
+    <category>Gas</category>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Gas</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWizardryGas">
+    <defName>Mandos_BlackSmoke</defName>
+    <label>darkness</label>
+    <graphicData>
+      <texPath>Effects/BlackSmoke</texPath>
+      <drawSize>2.2</drawSize>
+      <color>(1.0,1.0,1.0,0.9)</color>
+    </graphicData>
+    <gas>
+      <expireSeconds>
+        <min>16</min>
+        <max>18</max>
+      </expireSeconds>
+      <blockTurretTracking>false</blockTurretTracking>
+      <accuracyPenalty>1.1</accuracyPenalty>
+      <rotationSpeed>20</rotationSpeed>
+    </gas>
+  </ThingDef>
+    
+</Defs>

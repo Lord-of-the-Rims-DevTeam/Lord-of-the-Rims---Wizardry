@@ -33,6 +33,10 @@ namespace Wizardry
         public static WizardAbilityDef LotRW_Aule_RendEarth;
         public static WizardAbilityDef LotRW_Aule_RockWall;
 
+        public static WizardAbilityDef LotRW_Mandos_Haunt;
+        public static WizardAbilityDef LotRW_Mandos_Doom;
+        public static WizardAbilityDef LotRW_Mandos_Darkness;
+
         //Effects
         public static ThingDef Mote_ExpandingFlame;
         public static ThingDef Mote_RecedingFlame;
@@ -44,6 +48,7 @@ namespace Wizardry
         public static ThingDef FlyingObject_WolfSong;
         public static ThingDef FlyingObject_Spinning;
         public static ThingDef FlyingObject_StreamingFlame;
+        public static ThingDef FlyingObject_Haunt;
         public static ThingDef Mote_CastingBeam;
 
         //Sounds
@@ -64,6 +69,7 @@ namespace Wizardry
 
         //Damages
         public static DamageDef LotRW_RockFragments;
+        public static DamageDef LotRW_HauntDD;
 
         //Weather
         public static WeatherDef LotRW_HealingRainWD;

@@ -36,12 +36,12 @@
       <HintPath>..\..\JecsTools-master\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AbilityUser, Version=1.18.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\JecsTools\Assemblies\AbilityUser.dll</HintPath>
+    <Reference Include="AbilityUser">
+      <HintPath>..\..\..\..\..\workshop\content\294100\932008009\Assemblies\AbilityUser.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -51,11 +51,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mandos_Projectile_Darkness.cs" />
+    <Compile Include="Mandos_FlyingObject_Haunt.cs" />
     <Compile Include="Libraries\Building_Bookcase.cs" />
     <Compile Include="Libraries\Building_InternalStorage.cs" />
     <Compile Include="Libraries\CompProperties_StorageGraphic.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="Libraries\RoomRoleWorker_WizardLibrary.cs" />
     <Compile Include="Libraries\ThingBook.cs" />
     <Compile Include="Libraries\WorkGiver_ReturnBooks.cs" />
+    <Compile Include="Mandos_Verb_Doom.cs" />
     <Compile Include="Nienna_WorkGiver_HealingTouch.cs" />
+    <Compile Include="Mandos_Effect_Haunt.cs" />
     <Compile Include="Verb_BLOS.cs" />
     <Compile Include="MeshMaker.cs" />
     <Compile Include="MatPool.cs" />
